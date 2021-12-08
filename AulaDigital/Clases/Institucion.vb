@@ -22,7 +22,7 @@ Public Class Institucion
                                                         '" & Nombre & "')"
             cmmd.ExecuteNonQuery()
         Catch ex As Exception
-            Print("ERROR", ex.ToString)
+            Print(CInt("ERROR"), ex.ToString)
         End Try
     End Sub
 
@@ -71,7 +71,7 @@ Public Class Institucion
             rs77 = cmmd.ExecuteReader
             If rs77.HasRows = True Then
                 rs77.Read()
-                If rs77.GetString(0) = Id_Institucion Then
+                If CInt(rs77.GetString(0)) = Id_Institucion Then
                     VerdaderaFalsa = True
                 Else
                     VerdaderaFalsa = False

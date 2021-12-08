@@ -11,7 +11,7 @@ Public Class Localidad
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO LOCALIDAD (Nombre, CPostal, ESTADO) VALUES  ('" & Localidad.Nombre & "'," & Localidad.CPostal & "," & Localidad.ESTADO & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Localidad agregada Correctamente", vbInformation)
@@ -25,7 +25,7 @@ Public Class Localidad
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE LOCALIDAD SET Nombre = '" & Localidad.Nombre & "', CPostal = " & Localidad.CPostal & ", ESTADO = " & Localidad.ESTADO & " WHERE Id_Localidad = " & Localidad.Id_Localidad & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -39,7 +39,7 @@ Public Class Localidad
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE LOCALIDAD SET ESTADO = " & 0 & " WHERE Id_Localidad = " & Id_Localidad & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -74,7 +74,7 @@ Public Class Localidad
             Adaptador.Fill(dataS, "Localidades")
             DgvView.DataSource = dataS.Tables("Localidades")
         Catch ex As Exception
-            MsgBox("ERROR", ex.ToString)
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
 End Class

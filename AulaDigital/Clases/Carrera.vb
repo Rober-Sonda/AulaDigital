@@ -13,7 +13,7 @@ Public Class Carrera
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO CARRERA (Nombre, Turno, Anios_Carrera, ESTADO, Id_Institucion) VALUES  ('" & Carrera.Nombre & "', " & Carrera.Turno & ", " & Carrera.Anios_Carrera & ", " & Carrera.ESTADO & ", " & Carrera.Id_Institucion & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Alumno agregado Correctamente", vbInformation)
@@ -27,7 +27,7 @@ Public Class Carrera
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET CARRERA Nombre = '" & Carrera.Nombre & "', Turno = " & Carrera.Turno & ", Anios_Carrera = " & Carrera.Anios_Carrera & ", ESTADO = " & Carrera.ESTADO & ", Id_Institucion = " & Carrera.Id_Institucion & " WHERE id_Carrera = " & Carrera.id_Carrera & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -41,7 +41,7 @@ Public Class Carrera
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE CARRERA SET ESTADO = " & 0 & " WHERE id_Carrera = " & Carrera.id_Carrera & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -59,7 +59,7 @@ Public Class Carrera
             DgvView.DataSource = dataS.Tables("Carreras")
 
         Catch ex As Exception
-            MsgBox("ERROR", ex.ToString)
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
 End Class

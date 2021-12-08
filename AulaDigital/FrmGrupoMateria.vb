@@ -1,5 +1,5 @@
 ﻿Public Class FrmGrupoMateria
-    Private Sub BtnSiguiente_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         FrmAgregarAlumno.ShowDialog()
     End Sub
 End Class

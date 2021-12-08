@@ -34,7 +34,7 @@ Public Class Telefonos
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO TELEFONOS (Id_Institucion, Cod_Area, Telefono, Tipo) VALUES  (" & Id_Institucion & "," & Cod_Area & "," & Telefono & "," & Tipo & ")"
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -48,7 +48,7 @@ Public Class Telefonos
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET TELEFONOS Cod_Area = " & Telefono.Cod_Area & ", Telefono = " & Telefono.Telefono & ", Tipo = " & Telefono.Tipo & " WHERE Id_Telefono = " & Telefono.Id_Telefono & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -62,7 +62,7 @@ Public Class Telefonos
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "DELETE FROM TELEFONOS WHERE Id_Telefono = " & Telefono.Id_Telefono & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()

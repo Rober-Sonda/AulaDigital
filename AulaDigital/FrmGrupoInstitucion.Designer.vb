@@ -131,7 +131,7 @@ Partial Class FrmGrupoInst
         Me.TxtNombre.Location = New System.Drawing.Point(121, 143)
         Me.TxtNombre.Multiline = True
         Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(203, 30)
+        Me.TxtNombre.Size = New System.Drawing.Size(292, 30)
         Me.TxtNombre.TabIndex = 68
         '
         'LblNombre
@@ -164,7 +164,7 @@ Partial Class FrmGrupoInst
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(121, 94)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(203, 31)
+        Me.ComboBox1.Size = New System.Drawing.Size(292, 31)
         Me.ComboBox1.TabIndex = 103
         '
         'TextBox1
@@ -172,7 +172,7 @@ Partial Class FrmGrupoInst
         Me.TextBox1.Location = New System.Drawing.Point(121, 192)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(203, 30)
+        Me.TextBox1.Size = New System.Drawing.Size(292, 30)
         Me.TextBox1.TabIndex = 68
         '
         'Label2
@@ -192,7 +192,7 @@ Partial Class FrmGrupoInst
         Me.TextBox2.Location = New System.Drawing.Point(121, 240)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(203, 30)
+        Me.TextBox2.Size = New System.Drawing.Size(292, 30)
         Me.TextBox2.TabIndex = 68
         '
         'Label3
@@ -237,7 +237,7 @@ Partial Class FrmGrupoInst
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(121, 321)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(203, 31)
+        Me.ComboBox2.Size = New System.Drawing.Size(292, 31)
         Me.ComboBox2.TabIndex = 103
         '
         'Label6
@@ -258,7 +258,7 @@ Partial Class FrmGrupoInst
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(121, 365)
         Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(203, 31)
+        Me.ComboBox3.Size = New System.Drawing.Size(292, 31)
         Me.ComboBox3.TabIndex = 103
         '
         'Label7
@@ -291,7 +291,7 @@ Partial Class FrmGrupoInst
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(566, 455)
+        Me.ClientSize = New System.Drawing.Size(566, 436)
         Me.Controls.Add(Me.BtnDescartar)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label4)

@@ -15,7 +15,7 @@ Public Class Alumnos
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO ALUMNOS (Nombre, Apellido, DNI, Mail, Telefono, Trabaja, ESTADO) VALUES  ('" & Alumno.Nombre & "','" & Alumno.Apellido & "', " & Alumno.DNI & ",'" & Alumno.Mail & "'," & Alumno.Telefono & "," & Alumno.Trabaja & "," & Alumno.ESTADO & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Alumno agregado Correctamente", vbInformation)
@@ -29,7 +29,7 @@ Public Class Alumnos
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET ALUMNOS Nombre = '" & Alumno.Nombre & "', Apellido = " & Alumno.Apellido & ", Mail = " & Alumno.Mail & ", Telefono = " & Alumno.Telefono & ", Trabaja = " & Alumno.Trabaja & ", ESTADO = " & Alumno.ESTADO & " WHERE IdAlumnos = " & Alumno.IdAlumnos & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -42,7 +42,7 @@ Public Class Alumnos
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET ALUMNOS ESTADO = " & 0 & " WHERE IdAlumnos = " & Alumno.IdAlumnos & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -58,7 +58,38 @@ Public Class Alumnos
             Adaptador.Fill(dataS, "Alumnos")
             DgvView.DataSource = dataS.Tables("Alumnos")
         Catch ex As Exception
-            MsgBox("ERROR", ex.ToString)
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
+    Public Function ConsultarAlumno(ByVal idAlumno As Integer) As Alumnos
+        Try
+            Dim mAlumno As New Alumnos
+            Dim dbConn As New OleDbConnection
+            dbConn = New OleDbConnection(cadenaConexion)
+            dbConn.Open()
+            Dim dReader As OleDbDataReader
+            Dim sqlstr As String = "SELECT * FROM ALUMNOS WHERE ALUMNOS.ESTADO = 1 AND id_Alumnos =" & idAlumno & " ORDER BY ALUMNOS.Nombre"
+
+            If dReader.HasRows Then
+                Do While dReader.Read()
+                    mAlumno.IdAlumnos = Convert.ToInt32(dReader(0))
+                    mAlumno.Nombre = Convert.ToString(dReader(0))
+                    mAlumno.Apellido = Convert.ToString(dReader(0))
+                    mAlumno.DNI = Convert.ToInt32(dReader(0))
+                    mAlumno.ESTADO = Convert.ToByte(dReader(0))
+                    mAlumno.Telefono = Convert.ToInt32(dReader(0))
+                    mAlumno.Trabaja = Convert.ToBoolean(dReader(0))
+                    mAlumno.Mail = Convert.ToString(dReader(0))
+                Loop
+            Else
+                Console.WriteLine("No rows returned.")
+            End If
+
+            dReader.Close()
+            dbConn.Dispose()
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+
+    End Function
 End Class

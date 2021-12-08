@@ -1,10 +1,11 @@
 ﻿Public Class FrmInformacion
-    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs)
+    Public modFrm As Integer = 0 ' 0:agregar 1:editar 2:listar 3:eliminar
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         Dim frmInstitucion As New FrmAgregarInst
         frmInstitucion.ShowDialog()
     End Sub
 
-    Private Sub BtnModificar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         Dim frmInstitucion As New FrmAgregarInst
         frmInstitucion.ShowDialog()
     End Sub
@@ -33,8 +34,7 @@
         End If
         EstiloGrillas(DgvInformacionPrincipal)
     End Sub
-
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnCerrar_Click_1(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Me.Dispose()
     End Sub
 End Class

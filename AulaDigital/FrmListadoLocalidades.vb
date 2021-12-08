@@ -1,10 +1,12 @@
 ﻿Public Class FrmListadoLocalidades
+    Public modFrm As Integer = 0 ' 0:agregar 1:editar 2:listar 3:eliminar
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Me.Dispose()
     End Sub
 
     Private Sub BtnAgregarLocalidad_Click(sender As Object, e As EventArgs) Handles BtnAgregarLocalidad.Click
-        Dim frmLocalidades As New FrmLocalidad
+        Dim frmLocalidades As New FrmLocalidad()
+        frmLocalidades.modFrm = 0
         frmLocalidades.ShowDialog()
         Dim localidad As New Localidad
         localidad.ListarLocalidades(DgvLocalidades)
@@ -54,6 +56,7 @@
             localidad.CPostal = CLng(row.Cells(2).Value)
             frmLocalidades.TxtNombreLocalidad.Text = localidad.Nombre
             frmLocalidades.TxtCPostal.Text = CStr(localidad.CPostal)
+
             frmLocalidades.ShowDialog()
             localidad.ListarLocalidades(DgvLocalidades)
         Catch ex As Exception

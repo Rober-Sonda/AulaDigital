@@ -1,6 +1,6 @@
 ﻿Public Class FrmMenu
     Private Sub FrmMenuPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        OcultarBotones()
+        'OcultarBotones()
     End Sub
 
     'Oculta los botonos opcionales del menu principal.
@@ -32,11 +32,11 @@
 
     'Mostrar/Ocultar botones opcionales del menu principal.
     Private Sub BtnInformacion_Click(sender As Object, e As EventArgs) Handles BtnInformacion.Click
-        MostrarBotones(PnlInformacion)
+        'MostrarBotones(PnlInformacion)
     End Sub
 
     Private Sub BtnGrupos_Click(sender As Object, e As EventArgs) Handles BtnGrupos.Click
-        MostrarBotones(PnlGrupos)
+        'MostrarBotones(PnlGrupos)
     End Sub
 
     Private Sub BtnAsistencia_Click(sender As Object, e As EventArgs) Handles BtnAsistencia.Click
@@ -48,10 +48,7 @@
 
     End Sub
 
-
-
     'Otros Botones
-
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Me.Close()
     End Sub
@@ -75,14 +72,9 @@
         FrmInformacion.ShowDialog()
     End Sub
 
-    Private Sub BtnAlumno_Click(sender As Object, e As EventArgs) Handles BtnAlumno.Click
+    Private Sub BtnAlumno_Click(sender As Object, e As EventArgs) Handles BtnAlumnos.Click
         btnSelected = TYPE_ALUMNO
         FrmInformacion.ShowDialog()
-    End Sub
-
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles BtnCrearGrupo.Click
-        FrmGrupoInst.ShowDialog()
     End Sub
 
     Private Sub BtnInformes_Click(sender As Object, e As EventArgs) Handles BtnInformes.Click
@@ -95,17 +87,11 @@
         FrmEventos.ShowDialog()
     End Sub
 
-
-
-
-
-
-
     Private Sub FrmMenu_Resize(sender As Object, e As EventArgs) Handles Me.Resize
-        PnlTitulo.Width = Val(Me.Width)
-        PnlMenu.Height = Val(Me.Height)
+        PnlTitulo.Width = CInt(Val(Me.Width))
+        PnlMenu.Height = CInt(Val(Me.Height))
 
-        Call Centrar(PbxLogo, Me)
+        'Call Centrar(PbxLogo, Me)
 
     End Sub
     Private Sub BtnMaximizar_Click(sender As Object, e As EventArgs) Handles BtnMaximizar.Click
@@ -116,12 +102,18 @@
         End If
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-
+    Private Sub BtnCrearGrupo_Click(sender As Object, e As EventArgs) Handles BtnCrearGrupo.Click
+        Dim frmCrearGrupo As New FrmGrupoInst
+        frmCrearGrupo.ShowDialog()
     End Sub
 
-    Private Sub BtnLocalidades_Click(sender As Object, e As EventArgs) Handles BtnLocalidades.Click
+    Private Sub BtnLocalidades_Click_1(sender As Object, e As EventArgs) Handles BtnLocalidades.Click
         Dim ListadoLocalidades As New FrmListadoLocalidades
         ListadoLocalidades.ShowDialog()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles BtnAgregarAlumno.Click
+        Dim agregarAlumno As New Agregar_alumno
+        agregarAlumno.ShowDialog()
     End Sub
 End Class

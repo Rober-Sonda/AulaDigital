@@ -11,7 +11,7 @@ Public Class Cursa
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO CURSA (Id_Libro_de_Temas, Fecha_Actual, Id_Materia) VALUES (" & Cursada.Id_Libro_de_Temas & ",'" & Cursada.Fecha_Actual & "', " & Cursada.Id_Materia & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Alumno agregado Correctamente", vbInformation)
@@ -25,7 +25,7 @@ Public Class Cursa
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET CURSA Id_Libro_de_Temas = " & Cursada.Id_Libro_de_Temas & ", Fecha_Actual = " & Cursada.Fecha_Actual & ", Id_Materia = " & Cursada.Id_Materia & " WHERE Id_Cursa_Materia = " & Cursada.Id_Cursa_Materia & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -39,7 +39,7 @@ Public Class Cursa
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "DELETE FROM CURSA WHERE Id_Cursa_Materia = " & Cursada.Id_Cursa_Materia & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()

@@ -265,12 +265,13 @@ Partial Class FrmAgregarCarrera
         'BtnMinimizar
         '
         Me.BtnMinimizar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnMinimizar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnMinimizar.FlatAppearance.BorderSize = 0
         Me.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMinimizar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnMinimizar.Location = New System.Drawing.Point(3, 3)
+        Me.BtnMinimizar.Location = New System.Drawing.Point(28, 0)
         Me.BtnMinimizar.Name = "BtnMinimizar"
-        Me.BtnMinimizar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnMinimizar.Size = New System.Drawing.Size(30, 38)
         Me.BtnMinimizar.TabIndex = 30
         Me.BtnMinimizar.Text = "M"
         Me.BtnMinimizar.UseVisualStyleBackColor = False
@@ -278,12 +279,13 @@ Partial Class FrmAgregarCarrera
         'BtnMaximizar
         '
         Me.BtnMaximizar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnMaximizar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnMaximizar.FlatAppearance.BorderSize = 0
         Me.BtnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMaximizar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnMaximizar.Location = New System.Drawing.Point(39, 3)
+        Me.BtnMaximizar.Location = New System.Drawing.Point(58, 0)
         Me.BtnMaximizar.Name = "BtnMaximizar"
-        Me.BtnMaximizar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnMaximizar.Size = New System.Drawing.Size(30, 38)
         Me.BtnMaximizar.TabIndex = 30
         Me.BtnMaximizar.Text = "M"
         Me.BtnMaximizar.UseVisualStyleBackColor = False
@@ -291,12 +293,13 @@ Partial Class FrmAgregarCarrera
         'BtnCerrar
         '
         Me.BtnCerrar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnCerrar.FlatAppearance.BorderSize = 0
         Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCerrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnCerrar.Location = New System.Drawing.Point(75, 3)
+        Me.BtnCerrar.Location = New System.Drawing.Point(88, 0)
         Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnCerrar.Size = New System.Drawing.Size(30, 38)
         Me.BtnCerrar.TabIndex = 30
         Me.BtnCerrar.Text = "C"
         Me.BtnCerrar.UseVisualStyleBackColor = False

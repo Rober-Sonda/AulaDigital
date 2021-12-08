@@ -13,7 +13,7 @@ Public Class Materia
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO MATERIA (Nombre, Hs_Semanales, Tipo_Hora, ESTADO, Id_Carrera) VALUES ('" & Materia.Nombre & "', " & Materia.Hs_Semanales & ", " & Materia.Tipo_Hora & ", " & Materia.ESTADO & ", " & Materia.Id_Carrera & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Materia agregada Correctamente", vbInformation)
@@ -27,7 +27,7 @@ Public Class Materia
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET MATERIA Nombre = '" & Materia.Nombre & "', Hs_Semanales = " & Materia.Hs_Semanales & ", Tipo_Hora = " & Materia.Tipo_Hora & ", ESTADO = " & Materia.ESTADO & ", Id_Carrera = " & Materia.Id_Carrera & " WHERE ID_Materia = " & Materia.ID_Materia & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -41,7 +41,7 @@ Public Class Materia
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET CARRERA ESTADO = " & 0 & " WHERE id_Carrera = " & Carrera.id_Carrera & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -58,7 +58,7 @@ Public Class Materia
             Adaptador.Fill(dataS, "Materias")
             DgvView.DataSource = dataS.Tables("Materias")
         Catch ex As Exception
-            MsgBox("ERROR", ex.ToString)
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
 End Class

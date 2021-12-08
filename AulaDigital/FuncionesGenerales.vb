@@ -23,7 +23,7 @@ Module FuncionesGenerales
     'Conexion DB
     Sub Enlace()
         Try 'Excepciones
-            cadenaConexion = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\monita\Desktop\base terminada\PruebaDeBase - modificada-sin-intermedias.accdb")
+            cadenaConexion = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ROBER\Desktop\AulaDigital\PruebaDeBase - modificada-sin-intermedias.accdb")
             'conexion.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\monita\Desktop\base terminada\PruebaDeBase - modificada-sin-intermedias.accdb" 'Direccion de la base de datos
             conexion = New OleDbConnection(cadenaConexion)
             conexion.Open()

@@ -17,7 +17,7 @@ Public Class Clave
             cmmd.CommandText = "INSERT INTO CLAVE (CLAVE, USUARIO, CODIGO_RECUPERACION) VALUES  ('" & Clave & "','" & Usuario & "','" & Codigo_recuperacion & "')"
             cmmd.ExecuteNonQuery()
         Catch ex As Exception
-            Print("ERROR", ex.ToString)
+            Print(CInt("ERROR"), ex.ToString)
         End Try
     End Sub
 
@@ -33,7 +33,7 @@ Public Class Clave
                 cmmd.ExecuteNonQuery()
             End If
         Catch ex As Exception
-            Print("ERROR", ex.ToString)
+            Print(CInt("ERROR"), ex.ToString)
         End Try
     End Sub
 
@@ -41,16 +41,16 @@ Public Class Clave
 
     Function CompararClaves(ByVal ClaveIngresada As String) As Boolean
         Dim Clave As Boolean = False
-        Dim ClaveActual As String
+        Dim ClaveActual As String = ""
         Try
             Dim rs As OleDbDataReader = Nothing
             Dim cmd = New OleDbCommand("SELECT Clave FROM Clave", conexion)
             rs = cmd.ExecuteReader
             While rs.Read
-                ClaveActual = CLng(rs.GetValue(0))
+                ClaveActual = CStr(CLng(rs.GetValue(0)))
             End While
 
-            If (ClaveActual = ClaveIngresada) Then
+            If ClaveActual.Equals(ClaveIngresada) Then
                 Clave = True
             Else
                 Dim Msg As String = "Clave de Acceso incorrecta"

@@ -10,7 +10,7 @@ Public Class Libro_de_Temas
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO LIBRO_DE_TEMAS (Temas, ESTADO) VALUES (" & LibroDeTemas.Temas & ",'" & LibroDeTemas.ESTADO & "')"
             cmmd.ExecuteNonQuery()
             MsgBox("Alumno agregado Correctamente", vbInformation)
@@ -24,7 +24,7 @@ Public Class Libro_de_Temas
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET LIBRO_DE_TEMAS Temas = " & LibroDeTemas.Temas & " WHERE Id_Libro_de_Temas = " & LibroDeTemas.Id_Libro_de_Temas & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -38,7 +38,7 @@ Public Class Libro_de_Temas
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "DELETE FROM LIBRO_DE_TEMAS WHERE Id_Libro_de_Temas = " & LibroDeTemas.Id_Libro_de_Temas & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()

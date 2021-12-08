@@ -37,7 +37,7 @@ Partial Class FrmUsuario
         Me.LblUsuario.AutoSize = True
         Me.LblUsuario.BackColor = System.Drawing.Color.Transparent
         Me.LblUsuario.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!)
-        Me.LblUsuario.Location = New System.Drawing.Point(166, 35)
+        Me.LblUsuario.Location = New System.Drawing.Point(166, 28)
         Me.LblUsuario.Name = "LblUsuario"
         Me.LblUsuario.Size = New System.Drawing.Size(76, 23)
         Me.LblUsuario.TabIndex = 27
@@ -47,7 +47,7 @@ Partial Class FrmUsuario
         '
         Me.LblContrasena.BackColor = System.Drawing.Color.Transparent
         Me.LblContrasena.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!)
-        Me.LblContrasena.Location = New System.Drawing.Point(153, 103)
+        Me.LblContrasena.Location = New System.Drawing.Point(153, 100)
         Me.LblContrasena.Name = "LblContrasena"
         Me.LblContrasena.Size = New System.Drawing.Size(102, 25)
         Me.LblContrasena.TabIndex = 20
@@ -57,7 +57,7 @@ Partial Class FrmUsuario
         '
         Me.LblRepetir.BackColor = System.Drawing.Color.Transparent
         Me.LblRepetir.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!)
-        Me.LblRepetir.Location = New System.Drawing.Point(124, 176)
+        Me.LblRepetir.Location = New System.Drawing.Point(122, 174)
         Me.LblRepetir.Name = "LblRepetir"
         Me.LblRepetir.Size = New System.Drawing.Size(165, 25)
         Me.LblRepetir.TabIndex = 24
@@ -66,35 +66,36 @@ Partial Class FrmUsuario
         'TxtRepetir
         '
         Me.TxtRepetir.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtRepetir.Location = New System.Drawing.Point(71, 207)
+        Me.TxtRepetir.Location = New System.Drawing.Point(67, 209)
         Me.TxtRepetir.Name = "TxtRepetir"
-        Me.TxtRepetir.Size = New System.Drawing.Size(281, 29)
+        Me.TxtRepetir.Size = New System.Drawing.Size(274, 29)
         Me.TxtRepetir.TabIndex = 101
         '
         'TxtContrasena
         '
         Me.TxtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtContrasena.Location = New System.Drawing.Point(71, 134)
+        Me.TxtContrasena.Location = New System.Drawing.Point(67, 135)
         Me.TxtContrasena.Name = "TxtContrasena"
-        Me.TxtContrasena.Size = New System.Drawing.Size(281, 29)
+        Me.TxtContrasena.Size = New System.Drawing.Size(274, 29)
         Me.TxtContrasena.TabIndex = 102
         '
         'TxtUsuario
         '
         Me.TxtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtUsuario.Location = New System.Drawing.Point(71, 61)
+        Me.TxtUsuario.Location = New System.Drawing.Point(67, 61)
         Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.Size = New System.Drawing.Size(281, 29)
+        Me.TxtUsuario.Size = New System.Drawing.Size(274, 29)
         Me.TxtUsuario.TabIndex = 103
         '
         'BtnAceptar
         '
+        Me.BtnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnAceptar.BackColor = System.Drawing.Color.MediumAquamarine
         Me.BtnAceptar.FlatAppearance.BorderSize = 0
         Me.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAceptar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
         Me.BtnAceptar.ForeColor = System.Drawing.Color.White
-        Me.BtnAceptar.Location = New System.Drawing.Point(71, 267)
+        Me.BtnAceptar.Location = New System.Drawing.Point(170, 261)
         Me.BtnAceptar.Name = "BtnAceptar"
         Me.BtnAceptar.Size = New System.Drawing.Size(100, 35)
         Me.BtnAceptar.TabIndex = 116
@@ -103,12 +104,13 @@ Partial Class FrmUsuario
         '
         'BtnCancelar
         '
+        Me.BtnCancelar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnCancelar.BackColor = System.Drawing.Color.MediumAquamarine
         Me.BtnCancelar.FlatAppearance.BorderSize = 0
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCancelar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
         Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Location = New System.Drawing.Point(252, 267)
+        Me.BtnCancelar.Location = New System.Drawing.Point(282, 261)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(100, 35)
         Me.BtnCancelar.TabIndex = 115
@@ -120,7 +122,7 @@ Partial Class FrmUsuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(422, 341)
+        Me.ClientSize = New System.Drawing.Size(394, 305)
         Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.BtnCancelar)
         Me.Controls.Add(Me.TxtRepetir)

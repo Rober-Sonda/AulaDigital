@@ -12,7 +12,7 @@ Public Class Evento
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "INSERT INTO EVENTO (Dia, Hora_inicio, Hora_fin, Hora_fin, Descripcion) VALUES ('" & Evento.Dia & "','" & Evento.Hora_inicio & "', '" & Evento.Hora_fin & "', '" & Evento.Descripcion & "')"
             cmmd.ExecuteNonQuery()
             MsgBox("Evento agregado Correctamente", vbInformation)
@@ -26,7 +26,7 @@ Public Class Evento
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET EVENTO Dia = " & Evento.Dia & ", Hora_inicio = " & Evento.Hora_inicio & ", Hora_fin = " & Evento.Hora_fin & ", Descripcion = " & Evento.Descripcion & " WHERE Id_Evento = " & Evento.Id_Evento & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
@@ -40,7 +40,7 @@ Public Class Evento
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
-            cmmd.Transaction = Transact
+            cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "DELETE FROM EVENTO WHERE Id_Evento = " & Evento.Id_Evento & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()

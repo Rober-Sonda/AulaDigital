@@ -1,10 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class FrmAgregarInst
-    Private Sub LblLista_Click(sender As Object, e As EventArgs)
 
-    End Sub
-
-    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs)
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim mInstitucion As New Institucion
         Dim newTelefono As New Telefonos
         'existeUsuario = newUser.ComprobarCampoClave
@@ -15,7 +12,7 @@ Public Class FrmAgregarInst
         Dim tran As IDbTransaction = Nothing
         Try
             'cn.Open()
-            ultimoIdInstitucion = mInstitucion.UltimaInstitucion()
+            ultimoIdInstitucion = CInt(mInstitucion.UltimaInstitucion())
             tran = conexion.BeginTransaction
             'run some queries here
             mInstitucion.Nombre = TxtNombre.Text
@@ -41,12 +38,20 @@ Public Class FrmAgregarInst
         End Try
     End Sub
 
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs)
+    Private Sub btnAgregarLocalidad_Click(sender As Object, e As EventArgs) Handles btnAgregarLocalidad.Click
+        Dim Localidad As New FrmLocalidad
+        Localidad.ShowDialog()
+    End Sub
+
+    Private Sub BtnDescartar_Click(sender As Object, e As EventArgs) Handles BtnDescartar.Click, BtnCerrar.Click
         Me.Dispose()
     End Sub
 
-    Private Sub btnAgregarLocalidad_Click(sender As Object, e As EventArgs)
-        Dim Localidad As New FrmLocalidad
-        Localidad.ShowDialog()
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+
+    End Sub
+
+    Private Sub FrmAgregarInst_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

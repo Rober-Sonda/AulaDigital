@@ -34,25 +34,25 @@ Partial Class FrmAgregarMateria
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.LbltitulofrmCarrera = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.LblNombreCarrera = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.BtnAgregar = New System.Windows.Forms.Button()
+        Me.TxtHasta = New System.Windows.Forms.TextBox()
+        Me.TxtDesde = New System.Windows.Forms.TextBox()
+        Me.CmbFecha = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CmbNombre = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.BtnBorrar = New System.Windows.Forms.Button()
-        Me.CmbNombre = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.CmbFecha = New System.Windows.Forms.ComboBox()
-        Me.TxtDesde = New System.Windows.Forms.TextBox()
-        Me.TxtHasta = New System.Windows.Forms.TextBox()
-        Me.BtnAgregar = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.LblNombreCarrera = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.Dgv_ListaMaterias, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -139,12 +139,13 @@ Partial Class FrmAgregarMateria
         'BtnMinimizar
         '
         Me.BtnMinimizar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnMinimizar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnMinimizar.FlatAppearance.BorderSize = 0
         Me.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMinimizar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnMinimizar.Location = New System.Drawing.Point(3, 3)
+        Me.BtnMinimizar.Location = New System.Drawing.Point(28, 0)
         Me.BtnMinimizar.Name = "BtnMinimizar"
-        Me.BtnMinimizar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnMinimizar.Size = New System.Drawing.Size(30, 38)
         Me.BtnMinimizar.TabIndex = 30
         Me.BtnMinimizar.Text = "M"
         Me.BtnMinimizar.UseVisualStyleBackColor = False
@@ -152,12 +153,13 @@ Partial Class FrmAgregarMateria
         'BtnMaximizar
         '
         Me.BtnMaximizar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnMaximizar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnMaximizar.FlatAppearance.BorderSize = 0
         Me.BtnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMaximizar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnMaximizar.Location = New System.Drawing.Point(39, 3)
+        Me.BtnMaximizar.Location = New System.Drawing.Point(58, 0)
         Me.BtnMaximizar.Name = "BtnMaximizar"
-        Me.BtnMaximizar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnMaximizar.Size = New System.Drawing.Size(30, 38)
         Me.BtnMaximizar.TabIndex = 30
         Me.BtnMaximizar.Text = "M"
         Me.BtnMaximizar.UseVisualStyleBackColor = False
@@ -165,12 +167,13 @@ Partial Class FrmAgregarMateria
         'BtnCerrar
         '
         Me.BtnCerrar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnCerrar.FlatAppearance.BorderSize = 0
         Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCerrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnCerrar.Location = New System.Drawing.Point(75, 3)
+        Me.BtnCerrar.Location = New System.Drawing.Point(88, 0)
         Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnCerrar.Size = New System.Drawing.Size(30, 38)
         Me.BtnCerrar.TabIndex = 30
         Me.BtnCerrar.Text = "C"
         Me.BtnCerrar.UseVisualStyleBackColor = False
@@ -214,6 +217,169 @@ Partial Class FrmAgregarMateria
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(593, 474)
         Me.Panel3.TabIndex = 82
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(338, 240)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 18)
+        Me.Label7.TabIndex = 106
+        Me.Label7.Text = "Hasta"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(190, 240)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 18)
+        Me.Label6.TabIndex = 105
+        Me.Label6.Text = "Desde"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(26, 242)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(32, 18)
+        Me.Label5.TabIndex = 105
+        Me.Label5.Text = "Día"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.MediumAquamarine
+        Me.Label3.Location = New System.Drawing.Point(143, 13)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(110, 18)
+        Me.Label3.TabIndex = 103
+        Me.Label3.Text = "/  Ver existentes"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.MediumAquamarine
+        Me.Label2.Location = New System.Drawing.Point(24, 13)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(116, 18)
+        Me.Label2.TabIndex = 104
+        Me.Label2.Text = "Agregar Materia"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(26, 124)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(35, 18)
+        Me.Label1.TabIndex = 102
+        Me.Label1.Text = "Año"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(26, 199)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(175, 18)
+        Me.Label8.TabIndex = 102
+        Me.Label8.Text = "Horario y dia del módulo:"
+        '
+        'LblNombreCarrera
+        '
+        Me.LblNombreCarrera.AutoSize = True
+        Me.LblNombreCarrera.BackColor = System.Drawing.Color.Transparent
+        Me.LblNombreCarrera.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.LblNombreCarrera.ForeColor = System.Drawing.Color.Black
+        Me.LblNombreCarrera.Location = New System.Drawing.Point(26, 65)
+        Me.LblNombreCarrera.Name = "LblNombreCarrera"
+        Me.LblNombreCarrera.Size = New System.Drawing.Size(62, 18)
+        Me.LblNombreCarrera.TabIndex = 102
+        Me.LblNombreCarrera.Text = "Nombre"
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.Button5.Location = New System.Drawing.Point(545, 235)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(30, 30)
+        Me.Button5.TabIndex = 101
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'BtnAgregar
+        '
+        Me.BtnAgregar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnAgregar.FlatAppearance.BorderSize = 0
+        Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAgregar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.BtnAgregar.Location = New System.Drawing.Point(509, 235)
+        Me.BtnAgregar.Name = "BtnAgregar"
+        Me.BtnAgregar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnAgregar.TabIndex = 100
+        Me.BtnAgregar.UseVisualStyleBackColor = False
+        '
+        'TxtHasta
+        '
+        Me.TxtHasta.Location = New System.Drawing.Point(391, 233)
+        Me.TxtHasta.Multiline = True
+        Me.TxtHasta.Name = "TxtHasta"
+        Me.TxtHasta.Size = New System.Drawing.Size(87, 31)
+        Me.TxtHasta.TabIndex = 99
+        '
+        'TxtDesde
+        '
+        Me.TxtDesde.Location = New System.Drawing.Point(245, 233)
+        Me.TxtDesde.Multiline = True
+        Me.TxtDesde.Name = "TxtDesde"
+        Me.TxtDesde.Size = New System.Drawing.Size(87, 31)
+        Me.TxtDesde.TabIndex = 98
+        '
+        'CmbFecha
+        '
+        Me.CmbFecha.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbFecha.FormattingEnabled = True
+        Me.CmbFecha.Location = New System.Drawing.Point(64, 235)
+        Me.CmbFecha.Name = "CmbFecha"
+        Me.CmbFecha.Size = New System.Drawing.Size(120, 31)
+        Me.CmbFecha.TabIndex = 97
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(97, 118)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(250, 31)
+        Me.ComboBox1.TabIndex = 97
+        '
+        'CmbNombre
+        '
+        Me.CmbNombre.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbNombre.FormattingEnabled = True
+        Me.CmbNombre.Location = New System.Drawing.Point(100, 58)
+        Me.CmbNombre.Name = "CmbNombre"
+        Me.CmbNombre.Size = New System.Drawing.Size(250, 31)
+        Me.CmbNombre.TabIndex = 97
         '
         'Button1
         '
@@ -266,169 +432,6 @@ Partial Class FrmAgregarMateria
         Me.BtnBorrar.Size = New System.Drawing.Size(30, 30)
         Me.BtnBorrar.TabIndex = 62
         Me.BtnBorrar.UseVisualStyleBackColor = False
-        '
-        'CmbNombre
-        '
-        Me.CmbNombre.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbNombre.FormattingEnabled = True
-        Me.CmbNombre.Location = New System.Drawing.Point(100, 58)
-        Me.CmbNombre.Name = "CmbNombre"
-        Me.CmbNombre.Size = New System.Drawing.Size(250, 31)
-        Me.CmbNombre.TabIndex = 97
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(97, 118)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(250, 31)
-        Me.ComboBox1.TabIndex = 97
-        '
-        'CmbFecha
-        '
-        Me.CmbFecha.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbFecha.FormattingEnabled = True
-        Me.CmbFecha.Location = New System.Drawing.Point(64, 235)
-        Me.CmbFecha.Name = "CmbFecha"
-        Me.CmbFecha.Size = New System.Drawing.Size(120, 31)
-        Me.CmbFecha.TabIndex = 97
-        '
-        'TxtDesde
-        '
-        Me.TxtDesde.Location = New System.Drawing.Point(245, 233)
-        Me.TxtDesde.Multiline = True
-        Me.TxtDesde.Name = "TxtDesde"
-        Me.TxtDesde.Size = New System.Drawing.Size(87, 31)
-        Me.TxtDesde.TabIndex = 98
-        '
-        'TxtHasta
-        '
-        Me.TxtHasta.Location = New System.Drawing.Point(391, 233)
-        Me.TxtHasta.Multiline = True
-        Me.TxtHasta.Name = "TxtHasta"
-        Me.TxtHasta.Size = New System.Drawing.Size(87, 31)
-        Me.TxtHasta.TabIndex = 99
-        '
-        'BtnAgregar
-        '
-        Me.BtnAgregar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnAgregar.FlatAppearance.BorderSize = 0
-        Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnAgregar.Location = New System.Drawing.Point(509, 235)
-        Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnAgregar.TabIndex = 100
-        Me.BtnAgregar.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.Button5.Location = New System.Drawing.Point(545, 235)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(30, 30)
-        Me.Button5.TabIndex = 101
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'LblNombreCarrera
-        '
-        Me.LblNombreCarrera.AutoSize = True
-        Me.LblNombreCarrera.BackColor = System.Drawing.Color.Transparent
-        Me.LblNombreCarrera.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblNombreCarrera.ForeColor = System.Drawing.Color.Black
-        Me.LblNombreCarrera.Location = New System.Drawing.Point(26, 65)
-        Me.LblNombreCarrera.Name = "LblNombreCarrera"
-        Me.LblNombreCarrera.Size = New System.Drawing.Size(62, 18)
-        Me.LblNombreCarrera.TabIndex = 102
-        Me.LblNombreCarrera.Text = "Nombre"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(26, 124)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(35, 18)
-        Me.Label1.TabIndex = 102
-        Me.Label1.Text = "Año"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label3.Location = New System.Drawing.Point(143, 13)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 18)
-        Me.Label3.TabIndex = 103
-        Me.Label3.Text = "/  Ver existentes"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label2.Location = New System.Drawing.Point(24, 13)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 18)
-        Me.Label2.TabIndex = 104
-        Me.Label2.Text = "Agregar Materia"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(26, 242)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(32, 18)
-        Me.Label5.TabIndex = 105
-        Me.Label5.Text = "Día"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(190, 240)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 18)
-        Me.Label6.TabIndex = 105
-        Me.Label6.Text = "Desde"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(338, 240)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(47, 18)
-        Me.Label7.TabIndex = 106
-        Me.Label7.Text = "Hasta"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(26, 199)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(175, 18)
-        Me.Label8.TabIndex = 102
-        Me.Label8.Text = "Horario y dia del módulo:"
         '
         'FrmAgregarMateria
         '

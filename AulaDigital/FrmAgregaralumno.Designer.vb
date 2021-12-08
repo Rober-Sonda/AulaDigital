@@ -28,12 +28,9 @@ Partial Class Agregar_alumno
         Me.BtnMinimizar = New System.Windows.Forms.Button()
         Me.BtnMaximizar = New System.Windows.Forms.Button()
         Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LblLista = New System.Windows.Forms.Label()
-        Me.Dgv_ListaAlumnos = New System.Windows.Forms.DataGridView()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnAgregarLocalidad = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.CmbLocalidadInstitucion = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
@@ -48,13 +45,8 @@ Partial Class Agregar_alumno
         Me.LblDNI = New System.Windows.Forms.Label()
         Me.BtnGuardar = New System.Windows.Forms.Button()
         Me.BtnDescartar = New System.Windows.Forms.Button()
-        Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.PnlBotones.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.Dgv_ListaAlumnos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel2
@@ -65,7 +57,7 @@ Partial Class Agregar_alumno
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(884, 38)
+        Me.Panel2.Size = New System.Drawing.Size(540, 38)
         Me.Panel2.TabIndex = 54
         '
         'LbltitulofrmAlum
@@ -88,7 +80,7 @@ Partial Class Agregar_alumno
         Me.PnlBotones.Controls.Add(Me.BtnMaximizar)
         Me.PnlBotones.Controls.Add(Me.BtnCerrar)
         Me.PnlBotones.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PnlBotones.Location = New System.Drawing.Point(766, 0)
+        Me.PnlBotones.Location = New System.Drawing.Point(422, 0)
         Me.PnlBotones.Name = "PnlBotones"
         Me.PnlBotones.ShadowDecoration.Parent = Me.PnlBotones
         Me.PnlBotones.Size = New System.Drawing.Size(118, 38)
@@ -136,81 +128,38 @@ Partial Class Agregar_alumno
         Me.BtnCerrar.Text = "C"
         Me.BtnCerrar.UseVisualStyleBackColor = False
         '
-        'Panel1
+        'btnAgregarLocalidad
         '
-        Me.Panel1.Controls.Add(Me.LblLista)
-        Me.Panel1.Controls.Add(Me.Dgv_ListaAlumnos)
-        Me.Panel1.Controls.Add(Me.BtnBuscar)
-        Me.Panel1.Controls.Add(Me.TxtBuscar)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(531, 38)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(353, 474)
-        Me.Panel1.TabIndex = 55
+        Me.btnAgregarLocalidad.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.btnAgregarLocalidad.FlatAppearance.BorderSize = 0
+        Me.btnAgregarLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarLocalidad.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.btnAgregarLocalidad.Location = New System.Drawing.Point(403, 261)
+        Me.btnAgregarLocalidad.Name = "btnAgregarLocalidad"
+        Me.btnAgregarLocalidad.Size = New System.Drawing.Size(30, 30)
+        Me.btnAgregarLocalidad.TabIndex = 129
+        Me.btnAgregarLocalidad.UseVisualStyleBackColor = False
         '
-        'LblLista
+        'Label4
         '
-        Me.LblLista.AutoSize = True
-        Me.LblLista.BackColor = System.Drawing.Color.Transparent
-        Me.LblLista.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.LblLista.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.LblLista.Location = New System.Drawing.Point(146, 10)
-        Me.LblLista.Name = "LblLista"
-        Me.LblLista.Size = New System.Drawing.Size(79, 21)
-        Me.LblLista.TabIndex = 48
-        Me.LblLista.Text = "Alumnos"
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(61, 266)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 18)
+        Me.Label4.TabIndex = 128
+        Me.Label4.Text = "Localidad"
         '
-        'Dgv_ListaAlumnos
+        'CmbLocalidadInstitucion
         '
-        Me.Dgv_ListaAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListaAlumnos.Location = New System.Drawing.Point(27, 84)
-        Me.Dgv_ListaAlumnos.Name = "Dgv_ListaAlumnos"
-        Me.Dgv_ListaAlumnos.Size = New System.Drawing.Size(300, 355)
-        Me.Dgv_ListaAlumnos.TabIndex = 51
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnBuscar.FlatAppearance.BorderSize = 0
-        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnBuscar.Location = New System.Drawing.Point(297, 34)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnBuscar.TabIndex = 50
-        Me.BtnBuscar.UseVisualStyleBackColor = False
-        '
-        'TxtBuscar
-        '
-        Me.TxtBuscar.Location = New System.Drawing.Point(27, 34)
-        Me.TxtBuscar.Multiline = True
-        Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(264, 30)
-        Me.TxtBuscar.TabIndex = 49
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.TxtNombre)
-        Me.Panel3.Controls.Add(Me.LblNombre)
-        Me.Panel3.Controls.Add(Me.TxtApellido)
-        Me.Panel3.Controls.Add(Me.LblApellido)
-        Me.Panel3.Controls.Add(Me.TxtDni)
-        Me.Panel3.Controls.Add(Me.LblDireccion)
-        Me.Panel3.Controls.Add(Me.TxtTelefono)
-        Me.Panel3.Controls.Add(Me.Label1)
-        Me.Panel3.Controls.Add(Me.TexDireccion)
-        Me.Panel3.Controls.Add(Me.LblDNI)
-        Me.Panel3.Controls.Add(Me.BtnGuardar)
-        Me.Panel3.Controls.Add(Me.BtnDescartar)
-        Me.Panel3.Controls.Add(Me.BtnEditar)
-        Me.Panel3.Controls.Add(Me.BtnBorrar)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 38)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(525, 474)
-        Me.Panel3.TabIndex = 0
+        Me.CmbLocalidadInstitucion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbLocalidadInstitucion.FormattingEnabled = True
+        Me.CmbLocalidadInstitucion.Location = New System.Drawing.Point(139, 262)
+        Me.CmbLocalidadInstitucion.Name = "CmbLocalidadInstitucion"
+        Me.CmbLocalidadInstitucion.Size = New System.Drawing.Size(250, 28)
+        Me.CmbLocalidadInstitucion.TabIndex = 127
         '
         'Label3
         '
@@ -218,10 +167,10 @@ Partial Class Agregar_alumno
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.Label3.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label3.Location = New System.Drawing.Point(142, 21)
+        Me.Label3.Location = New System.Drawing.Point(194, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(110, 18)
-        Me.Label3.TabIndex = 65
+        Me.Label3.TabIndex = 120
         Me.Label3.Text = "/  Ver existentes"
         '
         'Label2
@@ -230,19 +179,19 @@ Partial Class Agregar_alumno
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.Label2.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label2.Location = New System.Drawing.Point(23, 21)
+        Me.Label2.Location = New System.Drawing.Point(75, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(117, 18)
-        Me.Label2.TabIndex = 66
+        Me.Label2.TabIndex = 121
         Me.Label2.Text = "Agregar Alumno"
         '
         'TxtNombre
         '
-        Me.TxtNombre.Location = New System.Drawing.Point(87, 58)
+        Me.TxtNombre.Location = New System.Drawing.Point(139, 98)
         Me.TxtNombre.Multiline = True
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.Size = New System.Drawing.Size(250, 30)
-        Me.TxtNombre.TabIndex = 60
+        Me.TxtNombre.TabIndex = 117
         '
         'LblNombre
         '
@@ -250,19 +199,20 @@ Partial Class Agregar_alumno
         Me.LblNombre.BackColor = System.Drawing.Color.Transparent
         Me.LblNombre.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.LblNombre.ForeColor = System.Drawing.Color.Black
-        Me.LblNombre.Location = New System.Drawing.Point(19, 64)
+        Me.LblNombre.Location = New System.Drawing.Point(71, 104)
         Me.LblNombre.Name = "LblNombre"
         Me.LblNombre.Size = New System.Drawing.Size(62, 18)
-        Me.LblNombre.TabIndex = 67
+        Me.LblNombre.TabIndex = 122
         Me.LblNombre.Text = "Nombre"
         '
         'TxtApellido
         '
-        Me.TxtApellido.Location = New System.Drawing.Point(87, 114)
+        Me.TxtApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtApellido.Location = New System.Drawing.Point(139, 154)
         Me.TxtApellido.Multiline = True
         Me.TxtApellido.Name = "TxtApellido"
         Me.TxtApellido.Size = New System.Drawing.Size(250, 30)
-        Me.TxtApellido.TabIndex = 59
+        Me.TxtApellido.TabIndex = 116
         '
         'LblApellido
         '
@@ -270,19 +220,19 @@ Partial Class Agregar_alumno
         Me.LblApellido.BackColor = System.Drawing.Color.Transparent
         Me.LblApellido.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.LblApellido.ForeColor = System.Drawing.Color.Black
-        Me.LblApellido.Location = New System.Drawing.Point(19, 120)
+        Me.LblApellido.Location = New System.Drawing.Point(71, 160)
         Me.LblApellido.Name = "LblApellido"
         Me.LblApellido.Size = New System.Drawing.Size(62, 18)
-        Me.LblApellido.TabIndex = 68
+        Me.LblApellido.TabIndex = 123
         Me.LblApellido.Text = "Apellido"
         '
         'TxtDni
         '
-        Me.TxtDni.Location = New System.Drawing.Point(87, 170)
+        Me.TxtDni.Location = New System.Drawing.Point(139, 210)
         Me.TxtDni.Multiline = True
         Me.TxtDni.Name = "TxtDni"
         Me.TxtDni.Size = New System.Drawing.Size(250, 30)
-        Me.TxtDni.TabIndex = 58
+        Me.TxtDni.TabIndex = 115
         '
         'LblDireccion
         '
@@ -290,19 +240,19 @@ Partial Class Agregar_alumno
         Me.LblDireccion.BackColor = System.Drawing.Color.Transparent
         Me.LblDireccion.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.LblDireccion.ForeColor = System.Drawing.Color.Black
-        Me.LblDireccion.Location = New System.Drawing.Point(19, 288)
+        Me.LblDireccion.Location = New System.Drawing.Point(71, 374)
         Me.LblDireccion.Name = "LblDireccion"
         Me.LblDireccion.Size = New System.Drawing.Size(66, 18)
-        Me.LblDireccion.TabIndex = 69
+        Me.LblDireccion.TabIndex = 124
         Me.LblDireccion.Text = "Dirección"
         '
         'TxtTelefono
         '
-        Me.TxtTelefono.Location = New System.Drawing.Point(87, 226)
+        Me.TxtTelefono.Location = New System.Drawing.Point(139, 312)
         Me.TxtTelefono.Multiline = True
         Me.TxtTelefono.Name = "TxtTelefono"
         Me.TxtTelefono.Size = New System.Drawing.Size(250, 30)
-        Me.TxtTelefono.TabIndex = 57
+        Me.TxtTelefono.TabIndex = 114
         '
         'Label1
         '
@@ -310,19 +260,19 @@ Partial Class Agregar_alumno
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(19, 232)
+        Me.Label1.Location = New System.Drawing.Point(71, 318)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 18)
-        Me.Label1.TabIndex = 70
+        Me.Label1.TabIndex = 125
         Me.Label1.Text = "Teléfono"
         '
         'TexDireccion
         '
-        Me.TexDireccion.Location = New System.Drawing.Point(87, 282)
+        Me.TexDireccion.Location = New System.Drawing.Point(139, 368)
         Me.TexDireccion.Multiline = True
         Me.TexDireccion.Name = "TexDireccion"
         Me.TexDireccion.Size = New System.Drawing.Size(250, 30)
-        Me.TexDireccion.TabIndex = 56
+        Me.TexDireccion.TabIndex = 113
         '
         'LblDNI
         '
@@ -330,10 +280,10 @@ Partial Class Agregar_alumno
         Me.LblDNI.BackColor = System.Drawing.Color.Transparent
         Me.LblDNI.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
         Me.LblDNI.ForeColor = System.Drawing.Color.Black
-        Me.LblDNI.Location = New System.Drawing.Point(19, 176)
+        Me.LblDNI.Location = New System.Drawing.Point(71, 216)
         Me.LblDNI.Name = "LblDNI"
         Me.LblDNI.Size = New System.Drawing.Size(33, 18)
-        Me.LblDNI.TabIndex = 71
+        Me.LblDNI.TabIndex = 126
         Me.LblDNI.Text = "DNI"
         '
         'BtnGuardar
@@ -343,10 +293,10 @@ Partial Class Agregar_alumno
         Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGuardar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
         Me.BtnGuardar.ForeColor = System.Drawing.Color.White
-        Me.BtnGuardar.Location = New System.Drawing.Point(296, 404)
+        Me.BtnGuardar.Location = New System.Drawing.Point(311, 428)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnGuardar.TabIndex = 64
+        Me.BtnGuardar.TabIndex = 119
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = False
         '
@@ -357,56 +307,44 @@ Partial Class Agregar_alumno
         Me.BtnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDescartar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
         Me.BtnDescartar.ForeColor = System.Drawing.Color.White
-        Me.BtnDescartar.Location = New System.Drawing.Point(402, 404)
+        Me.BtnDescartar.Location = New System.Drawing.Point(428, 428)
         Me.BtnDescartar.Name = "BtnDescartar"
         Me.BtnDescartar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnDescartar.TabIndex = 61
+        Me.BtnDescartar.TabIndex = 118
         Me.BtnDescartar.Text = "Descartar"
         Me.BtnDescartar.UseVisualStyleBackColor = False
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnEditar.FlatAppearance.BorderSize = 0
-        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnEditar.Location = New System.Drawing.Point(472, 58)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnEditar.TabIndex = 63
-        Me.BtnEditar.UseVisualStyleBackColor = False
-        '
-        'BtnBorrar
-        '
-        Me.BtnBorrar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnBorrar.FlatAppearance.BorderSize = 0
-        Me.BtnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBorrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnBorrar.Location = New System.Drawing.Point(472, 94)
-        Me.BtnBorrar.Name = "BtnBorrar"
-        Me.BtnBorrar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnBorrar.TabIndex = 62
-        Me.BtnBorrar.UseVisualStyleBackColor = False
         '
         'Agregar_alumno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(884, 512)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel1)
+        Me.ClientSize = New System.Drawing.Size(540, 512)
+        Me.Controls.Add(Me.btnAgregarLocalidad)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.CmbLocalidadInstitucion)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtNombre)
+        Me.Controls.Add(Me.LblNombre)
+        Me.Controls.Add(Me.TxtApellido)
+        Me.Controls.Add(Me.LblApellido)
+        Me.Controls.Add(Me.TxtDni)
+        Me.Controls.Add(Me.LblDireccion)
+        Me.Controls.Add(Me.TxtTelefono)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TexDireccion)
+        Me.Controls.Add(Me.LblDNI)
+        Me.Controls.Add(Me.BtnGuardar)
+        Me.Controls.Add(Me.BtnDescartar)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Agregar_alumno"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Agregar_alumno"
         Me.Panel2.ResumeLayout(False)
         Me.PnlBotones.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.Dgv_ListaAlumnos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -416,12 +354,9 @@ Partial Class Agregar_alumno
     Friend WithEvents BtnMinimizar As Button
     Friend WithEvents BtnMaximizar As Button
     Friend WithEvents BtnCerrar As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents LblLista As Label
-    Friend WithEvents Dgv_ListaAlumnos As DataGridView
-    Friend WithEvents BtnBuscar As Button
-    Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents btnAgregarLocalidad As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents CmbLocalidadInstitucion As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtNombre As TextBox
@@ -436,6 +371,4 @@ Partial Class Agregar_alumno
     Friend WithEvents LblDNI As Label
     Friend WithEvents BtnGuardar As Button
     Friend WithEvents BtnDescartar As Button
-    Friend WithEvents BtnEditar As Button
-    Friend WithEvents BtnBorrar As Button
 End Class
