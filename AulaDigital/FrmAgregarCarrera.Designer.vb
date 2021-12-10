@@ -22,7 +22,12 @@ Partial Class FrmAgregarCarrera
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PnlBotones = New Guna.UI2.WinForms.Guna2Panel()
+        Me.BtnMinimizar = New System.Windows.Forms.Button()
+        Me.BtnMaximizar = New System.Windows.Forms.Button()
+        Me.BtnCerrar = New System.Windows.Forms.Button()
+        Me.LbltitulofrmCarrera = New System.Windows.Forms.Label()
         Me.CmbTurno = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,210 +38,9 @@ Partial Class FrmAgregarCarrera
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.BtnBorrar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Dgv_ListaCarreras = New System.Windows.Forms.DataGridView()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.TxtBuscar = New System.Windows.Forms.TextBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PnlBotones = New Guna.UI2.WinForms.Guna2Panel()
-        Me.BtnMinimizar = New System.Windows.Forms.Button()
-        Me.BtnMaximizar = New System.Windows.Forms.Button()
-        Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.LbltitulofrmCarrera = New System.Windows.Forms.Label()
-        Me.Panel3.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.Dgv_ListaCarreras, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.PnlBotones.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.CmbTurno)
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Label2)
-        Me.Panel3.Controls.Add(Me.TxtNombreCarreras)
-        Me.Panel3.Controls.Add(Me.LblNombreCarrera)
-        Me.Panel3.Controls.Add(Me.LblTurno)
-        Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Controls.Add(Me.Button2)
-        Me.Panel3.Controls.Add(Me.BtnEditar)
-        Me.Panel3.Controls.Add(Me.BtnBorrar)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel3.Location = New System.Drawing.Point(0, 38)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(525, 474)
-        Me.Panel3.TabIndex = 58
-        '
-        'CmbTurno
-        '
-        Me.CmbTurno.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbTurno.FormattingEnabled = True
-        Me.CmbTurno.Location = New System.Drawing.Point(87, 111)
-        Me.CmbTurno.Name = "CmbTurno"
-        Me.CmbTurno.Size = New System.Drawing.Size(250, 31)
-        Me.CmbTurno.TabIndex = 72
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label3.Location = New System.Drawing.Point(142, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 18)
-        Me.Label3.TabIndex = 65
-        Me.Label3.Text = "/  Ver existentes"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label2.Location = New System.Drawing.Point(23, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(116, 18)
-        Me.Label2.TabIndex = 66
-        Me.Label2.Text = "Agregar Carrera"
-        '
-        'TxtNombreCarreras
-        '
-        Me.TxtNombreCarreras.Location = New System.Drawing.Point(87, 58)
-        Me.TxtNombreCarreras.Multiline = True
-        Me.TxtNombreCarreras.Name = "TxtNombreCarreras"
-        Me.TxtNombreCarreras.Size = New System.Drawing.Size(250, 30)
-        Me.TxtNombreCarreras.TabIndex = 60
-        '
-        'LblNombreCarrera
-        '
-        Me.LblNombreCarrera.AutoSize = True
-        Me.LblNombreCarrera.BackColor = System.Drawing.Color.Transparent
-        Me.LblNombreCarrera.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblNombreCarrera.ForeColor = System.Drawing.Color.Black
-        Me.LblNombreCarrera.Location = New System.Drawing.Point(19, 64)
-        Me.LblNombreCarrera.Name = "LblNombreCarrera"
-        Me.LblNombreCarrera.Size = New System.Drawing.Size(62, 18)
-        Me.LblNombreCarrera.TabIndex = 67
-        Me.LblNombreCarrera.Text = "Nombre"
-        '
-        'LblTurno
-        '
-        Me.LblTurno.AutoSize = True
-        Me.LblTurno.BackColor = System.Drawing.Color.Transparent
-        Me.LblTurno.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblTurno.ForeColor = System.Drawing.Color.Black
-        Me.LblTurno.Location = New System.Drawing.Point(23, 118)
-        Me.LblTurno.Name = "LblTurno"
-        Me.LblTurno.Size = New System.Drawing.Size(45, 18)
-        Me.LblTurno.TabIndex = 68
-        Me.LblTurno.Text = "Turno"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(296, 404)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 35)
-        Me.Button1.TabIndex = 64
-        Me.Button1.Text = "Guardar"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(402, 404)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(100, 35)
-        Me.Button2.TabIndex = 61
-        Me.Button2.Text = "Descartar"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnEditar.FlatAppearance.BorderSize = 0
-        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnEditar.Location = New System.Drawing.Point(472, 58)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnEditar.TabIndex = 63
-        Me.BtnEditar.UseVisualStyleBackColor = False
-        '
-        'BtnBorrar
-        '
-        Me.BtnBorrar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnBorrar.FlatAppearance.BorderSize = 0
-        Me.BtnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBorrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnBorrar.Location = New System.Drawing.Point(472, 94)
-        Me.BtnBorrar.Name = "BtnBorrar"
-        Me.BtnBorrar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnBorrar.TabIndex = 62
-        Me.BtnBorrar.UseVisualStyleBackColor = False
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Dgv_ListaCarreras)
-        Me.Panel1.Controls.Add(Me.BtnBuscar)
-        Me.Panel1.Controls.Add(Me.TxtBuscar)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel1.Location = New System.Drawing.Point(531, 38)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(353, 474)
-        Me.Panel1.TabIndex = 59
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.Label4.ForeColor = System.Drawing.Color.MediumAquamarine
-        Me.Label4.Location = New System.Drawing.Point(146, 10)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 21)
-        Me.Label4.TabIndex = 48
-        Me.Label4.Text = "Carreras"
-        '
-        'Dgv_ListaCarreras
-        '
-        Me.Dgv_ListaCarreras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_ListaCarreras.Location = New System.Drawing.Point(27, 84)
-        Me.Dgv_ListaCarreras.Name = "Dgv_ListaCarreras"
-        Me.Dgv_ListaCarreras.Size = New System.Drawing.Size(300, 355)
-        Me.Dgv_ListaCarreras.TabIndex = 51
-        '
-        'BtnBuscar
-        '
-        Me.BtnBuscar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnBuscar.FlatAppearance.BorderSize = 0
-        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnBuscar.Location = New System.Drawing.Point(297, 34)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(30, 30)
-        Me.BtnBuscar.TabIndex = 50
-        Me.BtnBuscar.UseVisualStyleBackColor = False
-        '
-        'TxtBuscar
-        '
-        Me.TxtBuscar.Location = New System.Drawing.Point(27, 34)
-        Me.TxtBuscar.Multiline = True
-        Me.TxtBuscar.Name = "TxtBuscar"
-        Me.TxtBuscar.Size = New System.Drawing.Size(264, 30)
-        Me.TxtBuscar.TabIndex = 49
         '
         'Panel2
         '
@@ -246,7 +50,7 @@ Partial Class FrmAgregarCarrera
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(884, 38)
+        Me.Panel2.Size = New System.Drawing.Size(533, 38)
         Me.Panel2.TabIndex = 60
         '
         'PnlBotones
@@ -256,7 +60,7 @@ Partial Class FrmAgregarCarrera
         Me.PnlBotones.Controls.Add(Me.BtnMaximizar)
         Me.PnlBotones.Controls.Add(Me.BtnCerrar)
         Me.PnlBotones.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PnlBotones.Location = New System.Drawing.Point(766, 0)
+        Me.PnlBotones.Location = New System.Drawing.Point(415, 0)
         Me.PnlBotones.Name = "PnlBotones"
         Me.PnlBotones.ShadowDecoration.Parent = Me.PnlBotones
         Me.PnlBotones.Size = New System.Drawing.Size(118, 38)
@@ -317,30 +121,155 @@ Partial Class FrmAgregarCarrera
         Me.LbltitulofrmCarrera.Text = "Carreras"
         Me.LbltitulofrmCarrera.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'CmbTurno
+        '
+        Me.CmbTurno.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbTurno.FormattingEnabled = True
+        Me.CmbTurno.Location = New System.Drawing.Point(99, 137)
+        Me.CmbTurno.Name = "CmbTurno"
+        Me.CmbTurno.Size = New System.Drawing.Size(250, 31)
+        Me.CmbTurno.TabIndex = 82
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label3.ForeColor = System.Drawing.Color.MediumAquamarine
+        Me.Label3.Location = New System.Drawing.Point(154, 47)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(110, 18)
+        Me.Label3.TabIndex = 78
+        Me.Label3.Text = "/  Ver existentes"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.Label2.ForeColor = System.Drawing.Color.MediumAquamarine
+        Me.Label2.Location = New System.Drawing.Point(35, 47)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(116, 18)
+        Me.Label2.TabIndex = 79
+        Me.Label2.Text = "Agregar Carrera"
+        '
+        'TxtNombreCarreras
+        '
+        Me.TxtNombreCarreras.Location = New System.Drawing.Point(99, 84)
+        Me.TxtNombreCarreras.Multiline = True
+        Me.TxtNombreCarreras.Name = "TxtNombreCarreras"
+        Me.TxtNombreCarreras.Size = New System.Drawing.Size(250, 30)
+        Me.TxtNombreCarreras.TabIndex = 73
+        '
+        'LblNombreCarrera
+        '
+        Me.LblNombreCarrera.AutoSize = True
+        Me.LblNombreCarrera.BackColor = System.Drawing.Color.Transparent
+        Me.LblNombreCarrera.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.LblNombreCarrera.ForeColor = System.Drawing.Color.Black
+        Me.LblNombreCarrera.Location = New System.Drawing.Point(31, 90)
+        Me.LblNombreCarrera.Name = "LblNombreCarrera"
+        Me.LblNombreCarrera.Size = New System.Drawing.Size(62, 18)
+        Me.LblNombreCarrera.TabIndex = 80
+        Me.LblNombreCarrera.Text = "Nombre"
+        '
+        'LblTurno
+        '
+        Me.LblTurno.AutoSize = True
+        Me.LblTurno.BackColor = System.Drawing.Color.Transparent
+        Me.LblTurno.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
+        Me.LblTurno.ForeColor = System.Drawing.Color.Black
+        Me.LblTurno.Location = New System.Drawing.Point(35, 144)
+        Me.LblTurno.Name = "LblTurno"
+        Me.LblTurno.Size = New System.Drawing.Size(45, 18)
+        Me.LblTurno.TabIndex = 81
+        Me.LblTurno.Text = "Turno"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(308, 254)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 35)
+        Me.Button1.TabIndex = 77
+        Me.Button1.Text = "Guardar"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(414, 254)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(100, 35)
+        Me.Button2.TabIndex = 74
+        Me.Button2.Text = "Descartar"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'BtnEditar
+        '
+        Me.BtnEditar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnEditar.FlatAppearance.BorderSize = 0
+        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.BtnEditar.Location = New System.Drawing.Point(484, 84)
+        Me.BtnEditar.Name = "BtnEditar"
+        Me.BtnEditar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnEditar.TabIndex = 76
+        Me.BtnEditar.UseVisualStyleBackColor = False
+        '
+        'BtnBorrar
+        '
+        Me.BtnBorrar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnBorrar.FlatAppearance.BorderSize = 0
+        Me.BtnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnBorrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.BtnBorrar.Location = New System.Drawing.Point(484, 120)
+        Me.BtnBorrar.Name = "BtnBorrar"
+        Me.BtnBorrar.Size = New System.Drawing.Size(30, 30)
+        Me.BtnBorrar.TabIndex = 75
+        Me.BtnBorrar.UseVisualStyleBackColor = False
+        '
         'FrmAgregarCarrera
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(884, 512)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel3)
+        Me.ClientSize = New System.Drawing.Size(533, 312)
+        Me.Controls.Add(Me.CmbTurno)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.TxtNombreCarreras)
+        Me.Controls.Add(Me.LblNombreCarrera)
+        Me.Controls.Add(Me.LblTurno)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.BtnEditar)
+        Me.Controls.Add(Me.BtnBorrar)
         Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmAgregarCarrera"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Agregar_Carrera"
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.Dgv_ListaCarreras, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.PnlBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents LbltitulofrmCarrera As Label
+    Friend WithEvents PnlBotones As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents BtnMinimizar As Button
+    Friend WithEvents BtnMaximizar As Button
+    Friend WithEvents BtnCerrar As Button
     Friend WithEvents CmbTurno As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
@@ -351,15 +280,4 @@ Partial Class FrmAgregarCarrera
     Friend WithEvents Button2 As Button
     Friend WithEvents BtnEditar As Button
     Friend WithEvents BtnBorrar As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Dgv_ListaCarreras As DataGridView
-    Friend WithEvents BtnBuscar As Button
-    Friend WithEvents TxtBuscar As TextBox
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents LbltitulofrmCarrera As Label
-    Friend WithEvents PnlBotones As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents BtnMinimizar As Button
-    Friend WithEvents BtnMaximizar As Button
-    Friend WithEvents BtnCerrar As Button
 End Class

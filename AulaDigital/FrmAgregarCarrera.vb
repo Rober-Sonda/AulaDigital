@@ -4,14 +4,6 @@
         Me.Dispose()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Dispose()
-    End Sub
-
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-
-    End Sub
-
     Private Sub FrmAgregarCarrera_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

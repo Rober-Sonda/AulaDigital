@@ -134,6 +134,12 @@
     <Compile Include="FrmListadoLocalidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmListados.Designer.vb">
+      <DependentUpon>FrmListados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmLocalidad.Designer.vb">
       <DependentUpon>FrmLocalidad.vb</DependentUpon>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListadoLocalidades.resx">
       <DependentUpon>FrmListadoLocalidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListados.resx">
+      <DependentUpon>FrmListados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLocalidad.resx">
       <DependentUpon>FrmLocalidad.vb</DependentUpon>

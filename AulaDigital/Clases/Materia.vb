@@ -61,4 +61,33 @@ Public Class Materia
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
+
+    Public Function ConsultarMateria(ByVal IdMateria As Integer) As Materia
+        Dim mMateria As New Materia
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
+        Try
+            dbConn.Open()
+            Dim dReader As OleDbDataReader
+            Dim sqlstr As String = "SELECT * FROM MATERIA WHERE MATERIA.ESTADO = 1 AND ID_Materia =" & IdMateria & " ORDER BY MATERIA.Nombre"
+
+            If dReader.HasRows Then
+                Do While dReader.Read()
+                    mMateria.Id_Carrera = Convert.ToInt32(dReader(0))
+                    mMateria.Nombre = Convert.ToString(dReader(1))
+                    mMateria.Hs_Semanales = Convert.ToString(dReader(2))
+                    mMateria.Tipo_Hora = Convert.ToByte(dReader(3))
+                    mMateria.ESTADO = Convert.ToByte(dReader(4))
+                Loop
+            Else
+                Console.WriteLine("No rows returned.")
+            End If
+
+            dReader.Close()
+            dbConn.Dispose()
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+        Return mMateria
+    End Function
 End Class

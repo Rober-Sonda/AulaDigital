@@ -103,8 +103,10 @@
     End Sub
 
     Private Sub BtnCrearGrupo_Click(sender As Object, e As EventArgs) Handles BtnCrearGrupo.Click
-        Dim frmCrearGrupo As New FrmGrupoInst
-        frmCrearGrupo.ShowDialog()
+        Dim frmListadosInst As New FrmListados
+        frmListadosInst.titulo = "Listado de Instituciones"
+        frmListadosInst.BtnAtras.Visible = False
+        frmListadosInst.ShowDialog()
     End Sub
 
     Private Sub BtnLocalidades_Click_1(sender As Object, e As EventArgs) Handles BtnLocalidades.Click

@@ -77,4 +77,32 @@ Public Class Localidad
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
+
+    Public Function ConsultarLocalidad(ByVal IdMateria As Integer) As Localidad
+        Dim mLocalidad As New Localidad
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
+        Try
+            dbConn.Open()
+            Dim dReader As OleDbDataReader
+            Dim sqlstr As String = "SELECT * FROM MATERIA WHERE MATERIA.ESTADO = 1 AND ID_Materia =" & IdMateria & " ORDER BY MATERIA.Nombre"
+
+            If dReader.HasRows Then
+                Do While dReader.Read()
+                    mLocalidad.Id_Localidad = Convert.ToInt32(dReader(0))
+                    mLocalidad.Nombre = Convert.ToString(dReader(1))
+                    mLocalidad.CPostal = Convert.ToInt32(dReader(2))
+                    mLocalidad.ESTADO = Convert.ToByte(dReader(3))
+                Loop
+            Else
+                Console.WriteLine("No rows returned.")
+            End If
+
+            dReader.Close()
+            dbConn.Dispose()
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+        Return mMateria
+    End Function
 End Class

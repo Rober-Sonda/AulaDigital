@@ -62,4 +62,34 @@ Public Class Carrera
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
+
+    Public Function ConsultarCarrera(ByVal idCarrera As Integer) As Carrera
+        Dim mCarrera As New Carrera
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
+        Try
+            dbConn.Open()
+            Dim dReader As OleDbDataReader
+            Dim sqlstr As String = "SELECT * FROM CARRERA WHERE CARRERA.ESTADO = 1 AND id_Carrera =" & idCarrera & " ORDER BY CARRERA.Nombre"
+
+            If dReader.HasRows Then
+                Do While dReader.Read()
+                    mCarrera.id_Carrera = Convert.ToInt32(dReader(0))
+                    mCarrera.Nombre = Convert.ToString(dReader(1))
+                    mCarrera.Turno = Convert.ToString(dReader(2))
+                    mCarrera.Anios_Carrera = Convert.ToByte(dReader(3))
+                    mCarrera.ESTADO = Convert.ToByte(dReader(4))
+                    mCarrera.Id_Institucion = Convert.ToInt32(dReader(5))
+                Loop
+            Else
+                Console.WriteLine("No rows returned.")
+            End If
+
+            dReader.Close()
+            dbConn.Dispose()
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+        Return mCarrera
+    End Function
 End Class

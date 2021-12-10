@@ -7,6 +7,8 @@ Public Class Alumnos
     Public DNI As Integer
     Public Mail As String
     Public Telefono As Integer
+    Public Domicilio As String
+    Public IdLocalidad As Integer
     Public Trabaja As Boolean
     Public ESTADO As Byte = 1
 
@@ -62,10 +64,10 @@ Public Class Alumnos
         End Try
     End Sub
     Public Function ConsultarAlumno(ByVal idAlumno As Integer) As Alumnos
+        Dim mAlumno As New Alumnos
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
         Try
-            Dim mAlumno As New Alumnos
-            Dim dbConn As New OleDbConnection
-            dbConn = New OleDbConnection(cadenaConexion)
             dbConn.Open()
             Dim dReader As OleDbDataReader
             Dim sqlstr As String = "SELECT * FROM ALUMNOS WHERE ALUMNOS.ESTADO = 1 AND id_Alumnos =" & idAlumno & " ORDER BY ALUMNOS.Nombre"
@@ -73,13 +75,15 @@ Public Class Alumnos
             If dReader.HasRows Then
                 Do While dReader.Read()
                     mAlumno.IdAlumnos = Convert.ToInt32(dReader(0))
-                    mAlumno.Nombre = Convert.ToString(dReader(0))
-                    mAlumno.Apellido = Convert.ToString(dReader(0))
-                    mAlumno.DNI = Convert.ToInt32(dReader(0))
-                    mAlumno.ESTADO = Convert.ToByte(dReader(0))
-                    mAlumno.Telefono = Convert.ToInt32(dReader(0))
-                    mAlumno.Trabaja = Convert.ToBoolean(dReader(0))
-                    mAlumno.Mail = Convert.ToString(dReader(0))
+                    mAlumno.Nombre = Convert.ToString(dReader(1))
+                    mAlumno.Apellido = Convert.ToString(dReader(2))
+                    mAlumno.DNI = Convert.ToInt32(dReader(3))
+                    mAlumno.Domicilio = Convert.ToString(dReader(4))
+                    mAlumno.IdLocalidad = Convert.ToInt32(dReader(5))
+                    mAlumno.Mail = Convert.ToString(dReader(6))
+                    mAlumno.Telefono = Convert.ToInt32(dReader(7))
+                    mAlumno.Trabaja = Convert.ToBoolean(dReader(8))
+                    mAlumno.ESTADO = Convert.ToByte(dReader(9))
                 Loop
             Else
                 Console.WriteLine("No rows returned.")
@@ -90,6 +94,6 @@ Public Class Alumnos
         Catch ex As Exception
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
-
+        Return mAlumno
     End Function
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports System.Data.OleDb
 Public Class FrmAgregarInst
-
-    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Public modFrm As Integer = 0 ' 0:agregar 1:editar 2:listar 3:eliminar
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs)
         Dim mInstitucion As New Institucion
         Dim newTelefono As New Telefonos
         'existeUsuario = newUser.ComprobarCampoClave
@@ -38,16 +38,17 @@ Public Class FrmAgregarInst
         End Try
     End Sub
 
-    Private Sub btnAgregarLocalidad_Click(sender As Object, e As EventArgs) Handles btnAgregarLocalidad.Click
+    Private Sub btnAgregarLocalidad_Click(sender As Object, e As EventArgs)
         Dim Localidad As New FrmLocalidad
+        Localidad.modFrm = 0
         Localidad.ShowDialog()
     End Sub
 
-    Private Sub BtnDescartar_Click(sender As Object, e As EventArgs) Handles BtnDescartar.Click, BtnCerrar.Click
+    Private Sub BtnDescartar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
         Me.Dispose()
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs)
 
     End Sub
 
