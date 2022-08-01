@@ -3,10 +3,8 @@
 Public Class Carrera
     Public id_Carrera As Long
     Public Nombre As String
-    Public Turno As String
-    Public Anios_Carrera As Byte
+    Public Duracion_Carrera As Byte
     Public ESTADO As Byte
-    Public Id_Institucion As Long
 
     Sub AgregarCarrera(ByVal Carrera As Carrera, Optional ByVal Transact As IDbTransaction = Nothing)
         Try
@@ -14,9 +12,9 @@ Public Class Carrera
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
             cmmd.Transaction = CType(Transact, OleDbTransaction)
-            cmmd.CommandText = "INSERT INTO CARRERA (Nombre, Turno, Anios_Carrera, ESTADO, Id_Institucion) VALUES  ('" & Carrera.Nombre & "', " & Carrera.Turno & ", " & Carrera.Anios_Carrera & ", " & Carrera.ESTADO & ", " & Carrera.Id_Institucion & ")"
+            cmmd.CommandText = "INSERT INTO CARRERA (Nombre, Duracion_Carrera, ESTADO) VALUES  ('" & Carrera.Nombre & "', " & Carrera.Duracion_Carrera & ", " & 1 & ")"
             cmmd.ExecuteNonQuery()
-            MsgBox("Alumno agregado Correctamente", vbInformation)
+            MsgBox("La carrera ha sido agregada Correctamente", vbInformation)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -28,7 +26,7 @@ Public Class Carrera
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
             cmmd.Transaction = CType(Transact, OleDbTransaction)
-            cmmd.CommandText = "UPDATE SET CARRERA Nombre = '" & Carrera.Nombre & "', Turno = " & Carrera.Turno & ", Anios_Carrera = " & Carrera.Anios_Carrera & ", ESTADO = " & Carrera.ESTADO & ", Id_Institucion = " & Carrera.Id_Institucion & " WHERE id_Carrera = " & Carrera.id_Carrera & ""
+            cmmd.CommandText = "UPDATE SET Carrera_de_Institucion Nombre = '" & Carrera.Nombre & "', Duracion_Carrera = " & Carrera.Duracion_Carrera & ", ESTADO = " & Carrera.ESTADO & " WHERE id_Carrera = " & Carrera.id_Carrera & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
         Catch ex As Exception
@@ -50,6 +48,19 @@ Public Class Carrera
         End Try
     End Sub
 
+    Sub EliminarCarrera(ByVal idCarrera As Long)
+        Try
+            Dim cmmd As New OleDbCommand
+            'Clave = ComprobarClaveAcceso(ClaveActual)
+            cmmd.Connection = conexion
+            cmmd.CommandText = "UPDATE CARRERA SET ESTADO = " & 0 & " WHERE id_Carrera = " & idCarrera & ""
+            cmmd.ExecuteNonQuery()
+            'cmmd.Transaction.Commit()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Public Sub ListarCarreras(ByVal DgvView As DataGridView)
         Try
             Dim Adaptador As OleDbDataAdapter
@@ -57,11 +68,45 @@ Public Class Carrera
             Dim dataS As New DataSet
             Adaptador.Fill(dataS, "Carreras")
             DgvView.DataSource = dataS.Tables("Carreras")
-
         Catch ex As Exception
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
+
+    Public Function _ListaCarreras() As List(Of Carrera)
+        Dim _ListCarrera As New List(Of Carrera)
+        Dim mCarrera As New Carrera
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
+        Try
+            Try
+                dbConn.Open()
+                Dim dReader As OleDbDataReader
+                Dim sqlstr As String = "SELECT * FROM CARRERA WHERE CARRERA.ESTADO = 1 ORDER BY CARRERA.Nombre"
+
+                If dReader.HasRows Then
+                    Do While dReader.Read()
+                        mCarrera.id_Carrera = Convert.ToInt64(dReader(0))
+                        mCarrera.Nombre = Convert.ToString(dReader(1))
+                        mCarrera.Duracion_Carrera = Convert.ToByte(dReader(2))
+                        mCarrera.ESTADO = Convert.ToByte(dReader(3))
+
+                        _ListCarrera.Add(mCarrera)
+                    Loop
+                Else
+                    Console.WriteLine("No rows returned.")
+                End If
+
+                dReader.Close()
+                dbConn.Dispose()
+            Catch ex As Exception
+                MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+            End Try
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+        Return _ListCarrera
+    End Function
 
     Public Function ConsultarCarrera(ByVal idCarrera As Integer) As Carrera
         Dim mCarrera As New Carrera
@@ -76,10 +121,8 @@ Public Class Carrera
                 Do While dReader.Read()
                     mCarrera.id_Carrera = Convert.ToInt32(dReader(0))
                     mCarrera.Nombre = Convert.ToString(dReader(1))
-                    mCarrera.Turno = Convert.ToString(dReader(2))
-                    mCarrera.Anios_Carrera = Convert.ToByte(dReader(3))
-                    mCarrera.ESTADO = Convert.ToByte(dReader(4))
-                    mCarrera.Id_Institucion = Convert.ToInt32(dReader(5))
+                    mCarrera.Duracion_Carrera = Convert.ToByte(dReader(2))
+                    mCarrera.ESTADO = Convert.ToByte(dReader(3))
                 Loop
             Else
                 Console.WriteLine("No rows returned.")

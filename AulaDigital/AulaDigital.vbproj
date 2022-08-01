@@ -52,6 +52,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\Iconos\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.1.9, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.1.9\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
@@ -59,6 +62,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -80,6 +84,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Carrera_de_Institucion.vb" />
     <Compile Include="FrmAgregarAlumno.Designer.vb">
       <DependentUpon>FrmAgregarAlumno.vb</DependentUpon>
     </Compile>
@@ -98,10 +103,10 @@
     <Compile Include="FrmAgregarInstitucion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAgregarMateria.Designer.vb">
-      <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
+    <Compile Include="FrmAgregarHorariosMaterias.Designer.vb">
+      <DependentUpon>FrmAgregarHorariosMaterias.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAgregarMateria.vb">
+    <Compile Include="FrmAgregarHorariosMaterias.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\Alumnos.vb" />
@@ -121,6 +126,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_Dataset_AulaDigital.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarMateria.Designer.vb">
+      <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAgregarMateria.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEventos.Designer.vb">
       <DependentUpon>FrmEventos.vb</DependentUpon>
@@ -146,19 +157,19 @@
     <Compile Include="FrmLocalidad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.vb">
+      <DependentUpon>FrmMenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTelCel.Designer.vb">
+      <DependentUpon>FrmTelCel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTelCel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FuncionesGenerales.vb" />
-    <Compile Include="FrmGrupoAlumno.Designer.vb">
-      <DependentUpon>FrmGrupoAlumno.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGrupoAlumno.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGrupoMateria.Designer.vb">
-      <DependentUpon>FrmGrupoMateria.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGrupoMateria.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmBienvenido.Designer.vb">
       <DependentUpon>FrmBienvenido.vb</DependentUpon>
     </Compile>
@@ -177,17 +188,16 @@
     <Compile Include="FrmInformes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenu.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMenu.Designer.vb">
-      <DependentUpon>FrmMenu.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FrmInformacionPrincipal.Designer.vb">
       <DependentUpon>FrmInformacionPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmInformacionPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LicUI\FormUILic.Designer.vb">
+      <DependentUpon>FormUILic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LicUI\FormUILic.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Modulo General.vb" />
@@ -229,17 +239,14 @@
     <EmbeddedResource Include="FrmAgregarInstitucion.resx">
       <DependentUpon>FrmAgregarInstitucion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAgregarHorariosMaterias.resx">
+      <DependentUpon>FrmAgregarHorariosMaterias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAgregarMateria.resx">
       <DependentUpon>FrmAgregarMateria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEventos.resx">
       <DependentUpon>FrmEventos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGrupoAlumno.resx">
-      <DependentUpon>FrmGrupoAlumno.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGrupoMateria.resx">
-      <DependentUpon>FrmGrupoMateria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBienvenido.resx">
       <DependentUpon>FrmBienvenido.vb</DependentUpon>
@@ -262,14 +269,20 @@
     <EmbeddedResource Include="FrmLocalidad.resx">
       <DependentUpon>FrmLocalidad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenu.resx">
-      <DependentUpon>FrmMenu.vb</DependentUpon>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTelCel.resx">
+      <DependentUpon>FrmTelCel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicUI\FormUILic.resx">
+      <DependentUpon>FormUILic.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTomarAsistencia.resx">
       <DependentUpon>FrmTomarAsistencia.vb</DependentUpon>
@@ -306,6 +319,24 @@
     <Content Include="PruebaDeBase - modificada-sin-intermedias.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\icons 32px\accept.png" />
+    <Content Include="Resources\icons 32px\add.png" />
+    <Content Include="Resources\icons 32px\address-book.png" />
+    <Content Include="Resources\icons 32px\angle-circle-left.png" />
+    <Content Include="Resources\icons 32px\angle-circle-right.png" />
+    <Content Include="Resources\icons 32px\ban.png" />
+    <Content Include="Resources\icons 32px\close.png" />
+    <Content Include="Resources\icons 32px\close2.png" />
+    <Content Include="Resources\icons 32px\edit.png" />
+    <Content Include="Resources\icons 32px\maximize.png" />
+    <Content Include="Resources\icons 32px\maximize2.png" />
+    <Content Include="Resources\icons 32px\minimize.png" />
+    <Content Include="Resources\icons 32px\minimize2.png" />
+    <Content Include="Resources\icons 32px\school.png" />
+    <Content Include="Resources\icons 32px\search.png" />
+    <Content Include="Resources\icons 32px\square.png" />
+    <Content Include="Resources\icons 32px\trash.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

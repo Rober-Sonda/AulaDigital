@@ -34,7 +34,7 @@
         End If
         EstiloGrillas(DgvInformacionPrincipal)
     End Sub
-    Private Sub BtnCerrar_Click_1(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+    Private Sub BtnCerrar_Click_1(sender As Object, e As EventArgs) 
         Me.Dispose()
     End Sub
 End Class

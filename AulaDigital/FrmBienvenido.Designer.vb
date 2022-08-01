@@ -22,30 +22,21 @@ Partial Class FrmIniciar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmIniciar))
         Me.LblContrasena = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LblUsuario = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LblIniciar = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.LblNombre = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.LblNombreInst = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtContrasena = New System.Windows.Forms.TextBox()
-        Me.LblOlvido = New System.Windows.Forms.Label()
-        Me.BtnAceptar = New System.Windows.Forms.Button()
-        Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BtnCerrar = New System.Windows.Forms.Button()
+        Me.LbltitulofrmInstitucion = New System.Windows.Forms.Label()
+        Me.BtnAceptar = New System.Windows.Forms.Button()
+        Me.LblOlvido = New System.Windows.Forms.Label()
+        Me.TxtContrasena = New System.Windows.Forms.TextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(174, 341)
-        Me.PictureBox1.TabIndex = 11
-        Me.PictureBox1.TabStop = False
         '
         'LblContrasena
         '
@@ -90,90 +81,6 @@ Partial Class FrmIniciar
         Me.LblNombre.TabIndex = 1
         Me.LblNombre.Text = "Angie"
         '
-        'LblNombreInst
-        '
-        Me.LblNombreInst.AutoSize = True
-        Me.LblNombreInst.BackColor = System.Drawing.Color.Transparent
-        Me.LblNombreInst.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblNombreInst.ForeColor = System.Drawing.Color.Black
-        Me.LblNombreInst.Location = New System.Drawing.Point(315, 9)
-        Me.LblNombreInst.Name = "LblNombreInst"
-        Me.LblNombreInst.Size = New System.Drawing.Size(88, 18)
-        Me.LblNombreInst.TabIndex = 103
-        Me.LblNombreInst.Text = "Iniciar Sesión"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(284, 55)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 18)
-        Me.Label1.TabIndex = 104
-        Me.Label1.Text = "Usuario"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(352, 55)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 18)
-        Me.Label2.TabIndex = 105
-        Me.Label2.Text = "Nombre"
-        '
-        'TxtContrasena
-        '
-        Me.TxtContrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtContrasena.Location = New System.Drawing.Point(214, 150)
-        Me.TxtContrasena.Name = "TxtContrasena"
-        Me.TxtContrasena.Size = New System.Drawing.Size(281, 26)
-        Me.TxtContrasena.TabIndex = 106
-        '
-        'LblOlvido
-        '
-        Me.LblOlvido.AutoSize = True
-        Me.LblOlvido.BackColor = System.Drawing.Color.Transparent
-        Me.LblOlvido.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblOlvido.ForeColor = System.Drawing.Color.SteelBlue
-        Me.LblOlvido.Location = New System.Drawing.Point(268, 189)
-        Me.LblOlvido.Name = "LblOlvido"
-        Me.LblOlvido.Size = New System.Drawing.Size(177, 18)
-        Me.LblOlvido.TabIndex = 107
-        Me.LblOlvido.Text = "¿Olvidaste tu contraseña? "
-        '
-        'BtnAceptar
-        '
-        Me.BtnAceptar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnAceptar.FlatAppearance.BorderSize = 0
-        Me.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAceptar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnAceptar.ForeColor = System.Drawing.Color.White
-        Me.BtnAceptar.Location = New System.Drawing.Point(214, 279)
-        Me.BtnAceptar.Name = "BtnAceptar"
-        Me.BtnAceptar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnAceptar.TabIndex = 115
-        Me.BtnAceptar.Text = "Aceptar"
-        Me.BtnAceptar.UseVisualStyleBackColor = False
-        '
-        'BtnCancelar
-        '
-        Me.BtnCancelar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnCancelar.FlatAppearance.BorderSize = 0
-        Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCancelar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnCancelar.ForeColor = System.Drawing.Color.White
-        Me.BtnCancelar.Location = New System.Drawing.Point(395, 279)
-        Me.BtnCancelar.Name = "BtnCancelar"
-        Me.BtnCancelar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnCancelar.TabIndex = 114
-        Me.BtnCancelar.Text = "Cancelar"
-        Me.BtnCancelar.UseVisualStyleBackColor = False
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -186,40 +93,130 @@ Partial Class FrmIniciar
         Me.Label4.TabIndex = 113
         Me.Label4.Text = "Nombre"
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Transparent
+        Me.Panel2.Controls.Add(Me.BtnCerrar)
+        Me.Panel2.Controls.Add(Me.LbltitulofrmInstitucion)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(349, 43)
+        Me.Panel2.TabIndex = 131
+        '
+        'BtnCerrar
+        '
+        Me.BtnCerrar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnCerrar.FlatAppearance.BorderSize = 0
+        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCerrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.BtnCerrar.Image = CType(resources.GetObject("BtnCerrar.Image"), System.Drawing.Image)
+        Me.BtnCerrar.Location = New System.Drawing.Point(0, 0)
+        Me.BtnCerrar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnCerrar.Name = "BtnCerrar"
+        Me.BtnCerrar.Size = New System.Drawing.Size(35, 43)
+        Me.BtnCerrar.TabIndex = 70
+        Me.BtnCerrar.UseVisualStyleBackColor = False
+        '
+        'LbltitulofrmInstitucion
+        '
+        Me.LbltitulofrmInstitucion.BackColor = System.Drawing.Color.Transparent
+        Me.LbltitulofrmInstitucion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.LbltitulofrmInstitucion.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbltitulofrmInstitucion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.LbltitulofrmInstitucion.Location = New System.Drawing.Point(0, 0)
+        Me.LbltitulofrmInstitucion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbltitulofrmInstitucion.Name = "LbltitulofrmInstitucion"
+        Me.LbltitulofrmInstitucion.Size = New System.Drawing.Size(349, 43)
+        Me.LbltitulofrmInstitucion.TabIndex = 71
+        Me.LbltitulofrmInstitucion.Text = "Iniciar sesión"
+        Me.LbltitulofrmInstitucion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'BtnAceptar
+        '
+        Me.BtnAceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.BtnAceptar.FlatAppearance.BorderSize = 0
+        Me.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAceptar.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.BtnAceptar.ForeColor = System.Drawing.Color.White
+        Me.BtnAceptar.Location = New System.Drawing.Point(104, 289)
+        Me.BtnAceptar.Name = "BtnAceptar"
+        Me.BtnAceptar.Size = New System.Drawing.Size(137, 35)
+        Me.BtnAceptar.TabIndex = 132
+        Me.BtnAceptar.Text = "Iniciar sesión"
+        Me.BtnAceptar.UseVisualStyleBackColor = False
+        '
+        'LblOlvido
+        '
+        Me.LblOlvido.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.LblOlvido.AutoSize = True
+        Me.LblOlvido.BackColor = System.Drawing.Color.Transparent
+        Me.LblOlvido.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblOlvido.ForeColor = System.Drawing.Color.White
+        Me.LblOlvido.Location = New System.Drawing.Point(81, 401)
+        Me.LblOlvido.Name = "LblOlvido"
+        Me.LblOlvido.Size = New System.Drawing.Size(183, 17)
+        Me.LblOlvido.TabIndex = 131
+        Me.LblOlvido.Text = "¿Olvidaste tu contraseña? "
+        '
+        'TxtContrasena
+        '
+        Me.TxtContrasena.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtContrasena.BackColor = System.Drawing.Color.DimGray
+        Me.TxtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtContrasena.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtContrasena.ForeColor = System.Drawing.Color.White
+        Me.TxtContrasena.Location = New System.Drawing.Point(36, 195)
+        Me.TxtContrasena.Name = "TxtContrasena"
+        Me.TxtContrasena.Size = New System.Drawing.Size(273, 20)
+        Me.TxtContrasena.TabIndex = 130
+        Me.TxtContrasena.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TxtContrasena.UseSystemPasswordChar = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(36, 220)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(273, 1)
+        Me.Panel1.TabIndex = 133
+        '
         'FrmIniciar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(527, 341)
+        Me.BackColor = System.Drawing.Color.DimGray
+        Me.ClientSize = New System.Drawing.Size(349, 467)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BtnAceptar)
-        Me.Controls.Add(Me.BtnCancelar)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.LblOlvido)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TxtContrasena)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.LblNombreInst)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label4)
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmIniciar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents LblContrasena As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LblUsuario As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LblIniciar As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents LblNombre As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents LblNombreInst As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TxtContrasena As TextBox
-    Friend WithEvents LblOlvido As Label
-    Friend WithEvents BtnAceptar As Button
-    Friend WithEvents BtnCancelar As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents BtnCerrar As Button
+    Friend WithEvents LbltitulofrmInstitucion As Label
+    Friend WithEvents BtnAceptar As Button
+    Friend WithEvents LblOlvido As Label
+    Friend WithEvents TxtContrasena As TextBox
+    Friend WithEvents Panel1 As Panel
 End Class

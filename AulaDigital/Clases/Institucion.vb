@@ -6,6 +6,7 @@ Public Class Institucion
     Public ESTADO As Byte
     Public Id_Localidad As Long
     Public ID_Institucion As Long
+    Public Celular As Long
 
 
     Sub InsertarInstitucion(ByVal Id_Localidad As Integer, ByVal ESTADO As Byte, ByVal Direccion As String, ByVal Mail As String, ByVal Nombre As String)
@@ -41,7 +42,7 @@ Public Class Institucion
         End Try
     End Sub
 
-    Sub BloquearInstitucion(ByVal ID_Institucion As Integer)
+    Sub EliminarInstitucion(ByVal ID_Institucion As Long)
         Try
             cmd = New OleDbCommand("UPDATE INSTITUCION SET ESTADO = 0,
                                     WHERE INSTITUCION.Id_Institucion = " & ID_Institucion & "", conexion)
@@ -98,5 +99,44 @@ Public Class Institucion
             rs50.Close()
         End Try
         Return UltimaInstitucion
+    End Function
+
+    Public Function _ListaInstituciones() As List(Of Institucion)
+        Dim _ListInst As New List(Of Institucion)
+        Dim mInst As New Institucion
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
+        Try
+            Try
+                dbConn.Open()
+                Dim dReader As OleDbDataReader
+                Dim sqlstr As String = "SELECT * FROM INSTITUCION WHERE INSTITUCION.ESTADO = 1 ORDER BY INSTITUCION.Nombre"
+                Dim cmd = New OleDbCommand(sqlstr, conexion)
+                dReader = cmd.ExecuteReader
+                If dReader.HasRows Then
+                    Do While dReader.Read()
+                        mInst.Nombre = Convert.ToString(dReader(0))
+                        mInst.Mail = Convert.ToString(dReader(1))
+                        mInst.Celular = Convert.ToInt32(dReader(2))
+                        mInst.Direccion = Convert.ToString(dReader(3))
+                        mInst.ESTADO = Convert.ToByte(dReader(4))
+                        mInst.Id_Localidad = Convert.ToInt64(dReader(5))
+                        mInst.ID_Institucion = Convert.ToInt64(dReader(6))
+
+                        _ListInst.Add(mInst)
+                    Loop
+                Else
+                    Console.WriteLine("No rows returned.")
+                End If
+
+                dReader.Close()
+                dbConn.Dispose()
+            Catch ex As Exception
+                MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+            End Try
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+        Return _ListInst
     End Function
 End Class

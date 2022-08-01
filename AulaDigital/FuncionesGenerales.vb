@@ -11,7 +11,12 @@ Module FuncionesGenerales
     Public Const TYPE_ASISTENCIA As Integer = 4
     Public Const TYPE_CREAR_GRUPO As Integer = 5
     Public Const TYPE_EVENTOS As Integer = 6
+    Public VERDE_APP As Color = Color.FromArgb(255, 49, 175, 180)
     Public btnSelected As Integer
+    Public AcceptCancel As Boolean = True
+    Public BACKCOLORFORMS As Color = Color.FloralWhite
+    Public BACKCOLORCONTROLS As Color = Color.DimGray
+    Public COLORTEXT As Integer = RGB(49, 175, 180)
     'Private oDataAdapter As OleDb.OleDbDataAdapter
     ' Private oDataSet As PruebaDeBaseDataSet
     Public cmd As New OleDbCommand 'Comando
@@ -19,11 +24,12 @@ Module FuncionesGenerales
     Public cadenaConexion As String 'Para ver el estado de la conexion
     Public Estado As String 'Para ver el estado de la conexion
     Public Comando As New OleDbCommand 'Comando
-
+    Public Adaptador As New OleDbDataAdapter
+    Public vbYesNo As Boolean = False
     'Conexion DB
     Sub Enlace()
         Try 'Excepciones
-            cadenaConexion = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ROBER\Desktop\AulaDigital\PruebaDeBase - modificada-sin-intermedias.accdb")
+            cadenaConexion = ("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\ROBER\OneDrive\Escritorio\AulaDigital\PruebaDeBase - modificada-sin-intermedias.accdb")
             'conexion.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\monita\Desktop\base terminada\PruebaDeBase - modificada-sin-intermedias.accdb" 'Direccion de la base de datos
             conexion = New OleDbConnection(cadenaConexion)
             conexion.Open()
@@ -223,6 +229,103 @@ Module FuncionesGenerales
         End Try
     End Sub
 
+    Public Sub EstiloGrillas(ByRef Dgview As DataGridView, ByVal Tag As Integer)
+        Try
+            With Dgview.ColumnHeadersDefaultCellStyle
+                .Font = New Font("Century Gothic", 9)
+                .ForeColor = Color.Blue
+                .BackColor = ColorPersonalizado(224, 224, 224)
+                .SelectionForeColor = Color.White
+                .SelectionBackColor = SystemColors.Highlight
+            End With 'celda titulo
+            With Dgview.DefaultCellStyle
+                .Font = New Font("Century Gothic", 9.75)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+                .SelectionForeColor = Color.Black
+                .SelectionBackColor = SystemColors.GradientActiveCaption
+            End With 'Celdas listadas
+            With Dgview.AlternatingRowsDefaultCellStyle
+                .Font = New Font("Century Gothic", 9.75)
+                .ForeColor = Color.Black
+                .BackColor = Color.White
+                .SelectionForeColor = Color.Black
+                .SelectionBackColor = SystemColors.GradientActiveCaption
+            End With 'Celdas listadas
+            With Dgview
+                .ReadOnly = True
+                .MultiSelect = False
+                .RowHeadersVisible = False 'Quita la columna con el *
+                .ColumnHeadersVisible = True
+                .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill 'Rellenan
+                .AutoSizeRowsMode = CType(DataGridViewAutoSizeColumnsMode.AllCells, DataGridViewAutoSizeRowsMode)
+                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                .AllowUserToAddRows = False 'Quita la ultima fila vacia
+                If (Tag = 0) Then
+                    .ColumnHeadersVisible = False
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox("Se produjo un error: " + ex.ToString)
+        End Try
+    End Sub
+
+    Public Sub EstiloGrillas(ByRef Dgview As DataGridView, ByVal Tag As Integer, ByVal titBtn1 As String, ByVal titBtn2 As String, ByVal listado As String)
+        Dim BtnColumn1 As DataGridViewButtonColumn = New DataGridViewButtonColumn
+        Dim BtnColumn2 As DataGridViewButtonColumn = New DataGridViewButtonColumn
+
+        BtnColumn1.Text = titBtn1
+        BtnColumn2.Text = titBtn2
+
+        With Dgview.ColumnHeadersDefaultCellStyle
+            .Font = New Font("Century Gothic", 9)
+            .ForeColor = Color.Blue
+            .BackColor = ColorPersonalizado(224, 224, 224)
+            .SelectionForeColor = Color.White
+            .SelectionBackColor = SystemColors.Highlight
+        End With 'celda titulo
+        With Dgview.DefaultCellStyle
+            .Font = New Font("Century Gothic", 9.75)
+            .ForeColor = Color.Black
+            .BackColor = Color.White
+            .SelectionForeColor = Color.Black
+            .SelectionBackColor = SystemColors.GradientActiveCaption
+        End With 'Celdas listadas
+        With Dgview.AlternatingRowsDefaultCellStyle
+            .Font = New Font("Century Gothic", 9.75)
+            .ForeColor = Color.Black
+            .BackColor = Color.White
+            .SelectionForeColor = Color.Black
+            .SelectionBackColor = SystemColors.GradientActiveCaption
+        End With 'Celdas listadas
+        With Dgview
+            .ReadOnly = True
+            .MultiSelect = False
+            .RowHeadersVisible = False 'Quita la columna con el *
+            .ColumnHeadersVisible = True
+            .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill 'Rellenan
+            .AutoSizeRowsMode = CType(DataGridViewAutoSizeColumnsMode.AllCells, DataGridViewAutoSizeRowsMode)
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .AllowUserToAddRows = False 'Quita la ultima fila vacia
+            If (Tag = 0) Then
+                .ColumnHeadersVisible = False
+            End If
+        End With
+
+        BtnColumn1.HeaderText = titBtn1
+        BtnColumn2.HeaderText = titBtn2
+
+        BtnColumn1.UseColumnTextForButtonValue = True
+        BtnColumn2.UseColumnTextForButtonValue = True
+
+        BtnColumn1.FillWeight = 20
+        BtnColumn2.FillWeight = 20
+
+        Dgview.Columns.Add(BtnColumn1)
+        Dgview.Columns.Add(BtnColumn2)
+
+    End Sub
+
     Public Function ColorPersonalizado(ByVal R As Integer, ByVal G As Integer, ByVal B As Integer) As Color
         Try
             ColorPersonalizado = Color.FromArgb(R, G, B)
@@ -231,6 +334,34 @@ Module FuncionesGenerales
             MsgBox("Se produjo un error: " + ex.ToString)
         End Try
     End Function
+
+    Public Sub Limpiar_TextBox_ComboBox(ByVal Formulario As Form)
+        For Each control As Control In Formulario.Controls 'Recorremos todos los controles del formulario que enviamos 
+            If TypeOf control Is TextBox Or TypeOf control Is ComboBox Then 'Filtramos solo aquellos de tipo TextBox
+                control.Text = "" ' eliminar el texto
+            End If
+        Next
+    End Sub
+
+    Sub LlenarCombo(ByVal combo As ComboBox, ByVal tabla As String, ByVal campoPrincipal As String, ByVal campoValueMember As String)
+        Dim listado As OleDbDataAdapter
+        Dim dtabl As DataTable
+        Using conect As New OleDbConnection(cadenaConexion)
+            Dim strSql = "SELECT " & campoPrincipal & ", " & campoValueMember & " FROM " & tabla & " WHERE ESTADO = " & 1 & ""
+            listado = New OleDbDataAdapter(strSql, conect)
+            Try
+                If IsDBNull(listado) = False And Not IsNothing(listado) Then
+                    dtabl = New DataTable
+                    listado.Fill(dtabl) 'Llenamos el dtab con la consulta
+                    combo.DataSource = dtabl
+                    combo.DisplayMember = campoPrincipal '& Campo que se muestra en el combo
+                    combo.ValueMember = campoValueMember 'valor que se almacena en el value del combo
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End Using
+    End Sub
 
 End Module
 

@@ -1,5 +1,5 @@
 ﻿Public Class FrmTomarAsistencia
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnDescartar.Click
         Me.Dispose()
     End Sub
 

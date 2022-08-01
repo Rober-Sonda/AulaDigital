@@ -22,320 +22,276 @@ Partial Class FrmGrupoInst
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LbltitulofrmAlum = New System.Windows.Forms.Label()
-        Me.PnlBotones = New Guna.UI2.WinForms.Guna2Panel()
-        Me.BtnMinimizar = New System.Windows.Forms.Button()
-        Me.BtnMaximizar = New System.Windows.Forms.Button()
-        Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.LblNombre = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmGrupoInst))
+        Me.PnlCurso = New System.Windows.Forms.Panel()
+        Me.dgvMateria = New System.Windows.Forms.DataGridView()
+        Me.dgvCarrera = New System.Windows.Forms.DataGridView()
+        Me.dgvInst = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnCrearClase = New System.Windows.Forms.Button()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.lblTitulo = New System.Windows.Forms.Label()
+        Me.Db_Dataset_AulaDigital1 = New AulaDigital.db_Dataset_AulaDigital()
+        Me.btnAgregarMateria = New System.Windows.Forms.Button()
+        Me.btnAgregarCarrera = New System.Windows.Forms.Button()
+        Me.btnAgregarInst = New System.Windows.Forms.Button()
         Me.BtnDescartar = New System.Windows.Forms.Button()
-        Me.Panel2.SuspendLayout()
-        Me.PnlBotones.SuspendLayout()
+        Me.PnlCurso.SuspendLayout()
+        CType(Me.dgvMateria, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvInst, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel12.SuspendLayout()
+        CType(Me.Db_Dataset_AulaDigital1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel2
+        'PnlCurso
         '
-        Me.Panel2.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.Panel2.Controls.Add(Me.LbltitulofrmAlum)
-        Me.Panel2.Controls.Add(Me.PnlBotones)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(566, 38)
-        Me.Panel2.TabIndex = 55
+        Me.PnlCurso.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PnlCurso.BackColor = System.Drawing.Color.FloralWhite
+        Me.PnlCurso.Controls.Add(Me.dgvMateria)
+        Me.PnlCurso.Controls.Add(Me.dgvCarrera)
+        Me.PnlCurso.Controls.Add(Me.dgvInst)
+        Me.PnlCurso.Controls.Add(Me.Label3)
+        Me.PnlCurso.Controls.Add(Me.Label1)
+        Me.PnlCurso.Controls.Add(Me.Label2)
+        Me.PnlCurso.Controls.Add(Me.btnCrearClase)
+        Me.PnlCurso.Controls.Add(Me.btnAgregarMateria)
+        Me.PnlCurso.Controls.Add(Me.btnAgregarCarrera)
+        Me.PnlCurso.Controls.Add(Me.btnAgregarInst)
+        Me.PnlCurso.Controls.Add(Me.Panel12)
+        Me.PnlCurso.Location = New System.Drawing.Point(21, 46)
+        Me.PnlCurso.Margin = New System.Windows.Forms.Padding(0)
+        Me.PnlCurso.Name = "PnlCurso"
+        Me.PnlCurso.Size = New System.Drawing.Size(770, 435)
+        Me.PnlCurso.TabIndex = 191
         '
-        'LbltitulofrmAlum
+        'dgvMateria
         '
-        Me.LbltitulofrmAlum.BackColor = System.Drawing.Color.Transparent
-        Me.LbltitulofrmAlum.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LbltitulofrmAlum.Font = New System.Drawing.Font("Berlin Sans FB", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbltitulofrmAlum.ForeColor = System.Drawing.Color.White
-        Me.LbltitulofrmAlum.Location = New System.Drawing.Point(0, 0)
-        Me.LbltitulofrmAlum.Name = "LbltitulofrmAlum"
-        Me.LbltitulofrmAlum.Size = New System.Drawing.Size(239, 38)
-        Me.LbltitulofrmAlum.TabIndex = 67
-        Me.LbltitulofrmAlum.Text = "Agregar institucion"
-        Me.LbltitulofrmAlum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.dgvMateria.BackgroundColor = System.Drawing.Color.Gray
+        Me.dgvMateria.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvMateria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvMateria.Location = New System.Drawing.Point(515, 95)
+        Me.dgvMateria.Name = "dgvMateria"
+        Me.dgvMateria.Size = New System.Drawing.Size(229, 251)
+        Me.dgvMateria.TabIndex = 239
         '
-        'PnlBotones
+        'dgvCarrera
         '
-        Me.PnlBotones.BackColor = System.Drawing.Color.Transparent
-        Me.PnlBotones.Controls.Add(Me.BtnMinimizar)
-        Me.PnlBotones.Controls.Add(Me.BtnMaximizar)
-        Me.PnlBotones.Controls.Add(Me.BtnCerrar)
-        Me.PnlBotones.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PnlBotones.Location = New System.Drawing.Point(448, 0)
-        Me.PnlBotones.Name = "PnlBotones"
-        Me.PnlBotones.ShadowDecoration.Parent = Me.PnlBotones
-        Me.PnlBotones.Size = New System.Drawing.Size(118, 38)
-        Me.PnlBotones.TabIndex = 29
+        Me.dgvCarrera.BackgroundColor = System.Drawing.Color.Gray
+        Me.dgvCarrera.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvCarrera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCarrera.Location = New System.Drawing.Point(269, 95)
+        Me.dgvCarrera.Name = "dgvCarrera"
+        Me.dgvCarrera.Size = New System.Drawing.Size(229, 251)
+        Me.dgvCarrera.TabIndex = 238
         '
-        'BtnMinimizar
+        'dgvInst
         '
-        Me.BtnMinimizar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnMinimizar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnMinimizar.FlatAppearance.BorderSize = 0
-        Me.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMinimizar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnMinimizar.Location = New System.Drawing.Point(28, 0)
-        Me.BtnMinimizar.Name = "BtnMinimizar"
-        Me.BtnMinimizar.Size = New System.Drawing.Size(30, 38)
-        Me.BtnMinimizar.TabIndex = 30
-        Me.BtnMinimizar.Text = "M"
-        Me.BtnMinimizar.UseVisualStyleBackColor = False
-        '
-        'BtnMaximizar
-        '
-        Me.BtnMaximizar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnMaximizar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnMaximizar.FlatAppearance.BorderSize = 0
-        Me.BtnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMaximizar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnMaximizar.Location = New System.Drawing.Point(58, 0)
-        Me.BtnMaximizar.Name = "BtnMaximizar"
-        Me.BtnMaximizar.Size = New System.Drawing.Size(30, 38)
-        Me.BtnMaximizar.TabIndex = 30
-        Me.BtnMaximizar.Text = "M"
-        Me.BtnMaximizar.UseVisualStyleBackColor = False
-        '
-        'BtnCerrar
-        '
-        Me.BtnCerrar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnCerrar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnCerrar.FlatAppearance.BorderSize = 0
-        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCerrar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnCerrar.Location = New System.Drawing.Point(88, 0)
-        Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(30, 38)
-        Me.BtnCerrar.TabIndex = 30
-        Me.BtnCerrar.Text = "C"
-        Me.BtnCerrar.UseVisualStyleBackColor = False
-        '
-        'TxtNombre
-        '
-        Me.TxtNombre.Location = New System.Drawing.Point(121, 143)
-        Me.TxtNombre.Multiline = True
-        Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.Size = New System.Drawing.Size(292, 30)
-        Me.TxtNombre.TabIndex = 68
-        '
-        'LblNombre
-        '
-        Me.LblNombre.AutoSize = True
-        Me.LblNombre.BackColor = System.Drawing.Color.Transparent
-        Me.LblNombre.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblNombre.ForeColor = System.Drawing.Color.Black
-        Me.LblNombre.Location = New System.Drawing.Point(53, 101)
-        Me.LblNombre.Name = "LblNombre"
-        Me.LblNombre.Size = New System.Drawing.Size(62, 18)
-        Me.LblNombre.TabIndex = 69
-        Me.LblNombre.Text = "Nombre"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(53, 155)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 18)
-        Me.Label1.TabIndex = 104
-        Me.Label1.Text = "Dirección"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(121, 94)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(292, 31)
-        Me.ComboBox1.TabIndex = 103
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(121, 192)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(292, 30)
-        Me.TextBox1.TabIndex = 68
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(53, 204)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 18)
-        Me.Label2.TabIndex = 104
-        Me.Label2.Text = "Telefono"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(121, 240)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(292, 30)
-        Me.TextBox2.TabIndex = 68
+        Me.dgvInst.BackgroundColor = System.Drawing.Color.Gray
+        Me.dgvInst.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgvInst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvInst.Location = New System.Drawing.Point(23, 95)
+        Me.dgvInst.Name = "dgvInst"
+        Me.dgvInst.Size = New System.Drawing.Size(229, 251)
+        Me.dgvInst.TabIndex = 237
         '
         'Label3
         '
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(53, 252)
+        Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(511, 67)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 18)
-        Me.Label3.TabIndex = 104
-        Me.Label3.Text = "Celular"
+        Me.Label3.Size = New System.Drawing.Size(67, 20)
+        Me.Label3.TabIndex = 235
+        Me.Label3.Text = "Materia"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label4
+        'Label1
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(30, 292)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 18)
-        Me.Label4.TabIndex = 104
-        Me.Label4.Text = "Carrera:"
+        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(265, 66)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 20)
+        Me.Label1.TabIndex = 232
+        Me.Label1.Text = "Carrera"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label5
+        'Label2
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label5.ForeColor = System.Drawing.Color.Black
-        Me.Label5.Location = New System.Drawing.Point(53, 328)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 18)
-        Me.Label5.TabIndex = 69
-        Me.Label5.Text = "Nombre"
+        Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(19, 67)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(83, 20)
+        Me.Label2.TabIndex = 232
+        Me.Label2.Text = "Institución"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'ComboBox2
+        'btnCrearClase
         '
-        Me.ComboBox2.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(121, 321)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(292, 31)
-        Me.ComboBox2.TabIndex = 103
+        Me.btnCrearClase.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCrearClase.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnCrearClase.FlatAppearance.BorderSize = 0
+        Me.btnCrearClase.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCrearClase.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.btnCrearClase.ForeColor = System.Drawing.Color.White
+        Me.btnCrearClase.Location = New System.Drawing.Point(630, 390)
+        Me.btnCrearClase.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCrearClase.Name = "btnCrearClase"
+        Me.btnCrearClase.Size = New System.Drawing.Size(117, 30)
+        Me.btnCrearClase.TabIndex = 227
+        Me.btnCrearClase.Text = "Crear clase"
+        Me.btnCrearClase.UseVisualStyleBackColor = False
         '
-        'Label6
+        'Panel12
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(53, 372)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(45, 18)
-        Me.Label6.TabIndex = 104
-        Me.Label6.Text = "Turno"
+        Me.Panel12.BackColor = System.Drawing.Color.Transparent
+        Me.Panel12.Controls.Add(Me.BtnDescartar)
+        Me.Panel12.Controls.Add(Me.lblTitulo)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(0, 0)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(770, 43)
+        Me.Panel12.TabIndex = 203
         '
-        'ComboBox3
+        'lblTitulo
         '
-        Me.ComboBox3.Font = New System.Drawing.Font("Berlin Sans FB", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(121, 365)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(292, 31)
-        Me.ComboBox3.TabIndex = 103
+        Me.lblTitulo.BackColor = System.Drawing.Color.FloralWhite
+        Me.lblTitulo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblTitulo.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.lblTitulo.Location = New System.Drawing.Point(0, 0)
+        Me.lblTitulo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(770, 43)
+        Me.lblTitulo.TabIndex = 71
+        Me.lblTitulo.Text = "Crear Clase"
+        Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label7
+        'Db_Dataset_AulaDigital1
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(30, 58)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(216, 18)
-        Me.Label7.TabIndex = 104
-        Me.Label7.Text = "* Institución / * Carrera / Materia"
+        Me.Db_Dataset_AulaDigital1.DataSetName = "Institucion"
+        Me.Db_Dataset_AulaDigital1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnAgregarMateria
+        '
+        Me.btnAgregarMateria.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnAgregarMateria.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnAgregarMateria.FlatAppearance.BorderSize = 0
+        Me.btnAgregarMateria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarMateria.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.btnAgregarMateria.ForeColor = System.Drawing.Color.White
+        Me.btnAgregarMateria.Image = CType(resources.GetObject("btnAgregarMateria.Image"), System.Drawing.Image)
+        Me.btnAgregarMateria.Location = New System.Drawing.Point(515, 353)
+        Me.btnAgregarMateria.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAgregarMateria.Name = "btnAgregarMateria"
+        Me.btnAgregarMateria.Size = New System.Drawing.Size(229, 29)
+        Me.btnAgregarMateria.TabIndex = 224
+        Me.btnAgregarMateria.Text = "Agregar Materia"
+        Me.btnAgregarMateria.UseVisualStyleBackColor = False
+        '
+        'btnAgregarCarrera
+        '
+        Me.btnAgregarCarrera.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnAgregarCarrera.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnAgregarCarrera.FlatAppearance.BorderSize = 0
+        Me.btnAgregarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarCarrera.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.btnAgregarCarrera.ForeColor = System.Drawing.Color.White
+        Me.btnAgregarCarrera.Image = CType(resources.GetObject("btnAgregarCarrera.Image"), System.Drawing.Image)
+        Me.btnAgregarCarrera.Location = New System.Drawing.Point(269, 353)
+        Me.btnAgregarCarrera.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAgregarCarrera.Name = "btnAgregarCarrera"
+        Me.btnAgregarCarrera.Size = New System.Drawing.Size(229, 29)
+        Me.btnAgregarCarrera.TabIndex = 225
+        Me.btnAgregarCarrera.Text = "Agregar Carrera"
+        Me.btnAgregarCarrera.UseVisualStyleBackColor = False
+        '
+        'btnAgregarInst
+        '
+        Me.btnAgregarInst.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnAgregarInst.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.btnAgregarInst.FlatAppearance.BorderSize = 0
+        Me.btnAgregarInst.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarInst.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.btnAgregarInst.ForeColor = System.Drawing.Color.White
+        Me.btnAgregarInst.Image = CType(resources.GetObject("btnAgregarInst.Image"), System.Drawing.Image)
+        Me.btnAgregarInst.Location = New System.Drawing.Point(23, 353)
+        Me.btnAgregarInst.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAgregarInst.Name = "btnAgregarInst"
+        Me.btnAgregarInst.Size = New System.Drawing.Size(229, 29)
+        Me.btnAgregarInst.TabIndex = 226
+        Me.btnAgregarInst.Text = "Agregar Institución"
+        Me.btnAgregarInst.UseVisualStyleBackColor = False
         '
         'BtnDescartar
         '
-        Me.BtnDescartar.BackColor = System.Drawing.Color.MediumAquamarine
+        Me.BtnDescartar.BackColor = System.Drawing.Color.FloralWhite
+        Me.BtnDescartar.Dock = System.Windows.Forms.DockStyle.Left
         Me.BtnDescartar.FlatAppearance.BorderSize = 0
         Me.BtnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDescartar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnDescartar.ForeColor = System.Drawing.Color.White
-        Me.BtnDescartar.Location = New System.Drawing.Point(442, 363)
+        Me.BtnDescartar.Image = CType(resources.GetObject("BtnDescartar.Image"), System.Drawing.Image)
+        Me.BtnDescartar.Location = New System.Drawing.Point(0, 0)
+        Me.BtnDescartar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnDescartar.Name = "BtnDescartar"
-        Me.BtnDescartar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnDescartar.TabIndex = 109
-        Me.BtnDescartar.Text = "Siguiente"
+        Me.BtnDescartar.Size = New System.Drawing.Size(35, 43)
+        Me.BtnDescartar.TabIndex = 70
         Me.BtnDescartar.UseVisualStyleBackColor = False
         '
         'FrmGrupoInst
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(566, 436)
-        Me.Controls.Add(Me.BtnDescartar)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox3)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.TxtNombre)
-        Me.Controls.Add(Me.LblNombre)
-        Me.Controls.Add(Me.Panel2)
+        Me.BackColor = System.Drawing.Color.DimGray
+        Me.ClientSize = New System.Drawing.Size(813, 527)
+        Me.Controls.Add(Me.PnlCurso)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmGrupoInst"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Panel2.ResumeLayout(False)
-        Me.PnlBotones.ResumeLayout(False)
+        Me.PnlCurso.ResumeLayout(False)
+        Me.PnlCurso.PerformLayout()
+        CType(Me.dgvMateria, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCarrera, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvInst, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel12.ResumeLayout(False)
+        CType(Me.Db_Dataset_AulaDigital1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents LbltitulofrmAlum As Label
-    Friend WithEvents PnlBotones As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents BtnMinimizar As Button
-    Friend WithEvents BtnMaximizar As Button
-    Friend WithEvents BtnCerrar As Button
-    Friend WithEvents TxtNombre As TextBox
-    Friend WithEvents LblNombre As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents Label7 As Label
+    Friend WithEvents PnlCurso As Panel
+    Friend WithEvents Panel12 As Panel
     Friend WithEvents BtnDescartar As Button
+    Friend WithEvents lblTitulo As Label
+    Friend WithEvents btnAgregarMateria As Button
+    Friend WithEvents btnAgregarCarrera As Button
+    Friend WithEvents btnAgregarInst As Button
+    Friend WithEvents btnCrearClase As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dgvMateria As DataGridView
+    Friend WithEvents dgvCarrera As DataGridView
+    Friend WithEvents dgvInst As DataGridView
+    Friend WithEvents Db_Dataset_AulaDigital1 As db_Dataset_AulaDigital
 End Class

@@ -1,8 +1,7 @@
 ﻿Public Class FrmIniciar
-
+    Public frmPrincipal As New FrmMenuPrincipal
 
     Private Sub BtnAceptar_Click(sender As Object, e As EventArgs) Handles BtnAceptar.Click
-
         Dim existeUsuario As Boolean
         Dim newUser As New Clave
         existeUsuario = newUser.ComprobarCampoClave
@@ -14,7 +13,7 @@
             Usuario.Clave = TxtContrasena.Text
             passCorrecta = Usuario.CompararClaves(Usuario.Clave)
             If (passCorrecta) Then
-                FrmMenu.ShowDialog()
+                frmPrincipal.ShowDialog()
                 Me.Close()
             Else
                 MsgBox("Contraseña incorrecta", vbInformation)
@@ -27,13 +26,14 @@
 
     Private Sub FrmIniciar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Enlace()
+        TxtContrasena.Focus()
     End Sub
 
-    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
-        Me.Dispose()
-    End Sub
-
-    Private Sub LblOlvido_Click(sender As Object, e As EventArgs) Handles LblOlvido.Click
+    Private Sub LblOlvido_Click(sender As Object, e As EventArgs)
         FrmUsuario.ShowDialog()
+    End Sub
+
+    Private Sub BtnCerrar_Click_1(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+        Me.Dispose()
     End Sub
 End Class

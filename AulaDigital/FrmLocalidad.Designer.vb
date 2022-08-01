@@ -22,135 +22,198 @@ Partial Class FrmLocalidad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.LblLocalidad = New System.Windows.Forms.Label()
-        Me.TxtCPostal = New System.Windows.Forms.TextBox()
-        Me.TxtNombreLocalidad = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.BtnGuardar = New System.Windows.Forms.Button()
-        Me.BtnDescartar = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLocalidad))
+        Me.PnlLocalidad = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LbltitulofrmInstitucion = New System.Windows.Forms.Label()
-        Me.Panel2.SuspendLayout()
+        Me.TxtCPostal = New System.Windows.Forms.TextBox()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TxtNombreLocalidad = New System.Windows.Forms.TextBox()
+        Me.BtnGuardarLocalidad = New System.Windows.Forms.Button()
+        Me.lblCPostal = New System.Windows.Forms.Label()
+        Me.lblLocalidad = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnDescartar = New System.Windows.Forms.Button()
+        Me.PnlLocalidad.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.SuspendLayout()
         '
-        'LblLocalidad
+        'PnlLocalidad
         '
-        Me.LblLocalidad.AutoSize = True
-        Me.LblLocalidad.BackColor = System.Drawing.Color.Transparent
-        Me.LblLocalidad.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.LblLocalidad.ForeColor = System.Drawing.Color.Black
-        Me.LblLocalidad.Location = New System.Drawing.Point(88, 68)
-        Me.LblLocalidad.Name = "LblLocalidad"
-        Me.LblLocalidad.Size = New System.Drawing.Size(62, 18)
-        Me.LblLocalidad.TabIndex = 110
-        Me.LblLocalidad.Text = "Nombre"
-        '
-        'TxtCPostal
-        '
-        Me.TxtCPostal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtCPostal.Location = New System.Drawing.Point(91, 152)
-        Me.TxtCPostal.Name = "TxtCPostal"
-        Me.TxtCPostal.Size = New System.Drawing.Size(281, 29)
-        Me.TxtCPostal.TabIndex = 108
-        '
-        'TxtNombreLocalidad
-        '
-        Me.TxtNombreLocalidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNombreLocalidad.Location = New System.Drawing.Point(91, 89)
-        Me.TxtNombreLocalidad.Name = "TxtNombreLocalidad"
-        Me.TxtNombreLocalidad.Size = New System.Drawing.Size(281, 29)
-        Me.TxtNombreLocalidad.TabIndex = 109
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Berlin Sans FB", 12.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(88, 131)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(97, 18)
-        Me.Label1.TabIndex = 110
-        Me.Label1.Text = "Código Postal"
-        '
-        'BtnGuardar
-        '
-        Me.BtnGuardar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnGuardar.FlatAppearance.BorderSize = 0
-        Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnGuardar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnGuardar.ForeColor = System.Drawing.Color.White
-        Me.BtnGuardar.Location = New System.Drawing.Point(91, 233)
-        Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnGuardar.TabIndex = 112
-        Me.BtnGuardar.Text = "Aceptar"
-        Me.BtnGuardar.UseVisualStyleBackColor = False
-        '
-        'BtnDescartar
-        '
-        Me.BtnDescartar.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.BtnDescartar.FlatAppearance.BorderSize = 0
-        Me.BtnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnDescartar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
-        Me.BtnDescartar.ForeColor = System.Drawing.Color.White
-        Me.BtnDescartar.Location = New System.Drawing.Point(272, 233)
-        Me.BtnDescartar.Name = "BtnDescartar"
-        Me.BtnDescartar.Size = New System.Drawing.Size(100, 35)
-        Me.BtnDescartar.TabIndex = 111
-        Me.BtnDescartar.Text = "Cancelar"
-        Me.BtnDescartar.UseVisualStyleBackColor = False
+        Me.PnlLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.PnlLocalidad.BackColor = System.Drawing.Color.FloralWhite
+        Me.PnlLocalidad.Controls.Add(Me.Panel2)
+        Me.PnlLocalidad.Controls.Add(Me.TxtCPostal)
+        Me.PnlLocalidad.Controls.Add(Me.Panel3)
+        Me.PnlLocalidad.Controls.Add(Me.TxtNombreLocalidad)
+        Me.PnlLocalidad.Controls.Add(Me.BtnGuardarLocalidad)
+        Me.PnlLocalidad.Controls.Add(Me.lblCPostal)
+        Me.PnlLocalidad.Controls.Add(Me.lblLocalidad)
+        Me.PnlLocalidad.Controls.Add(Me.Panel12)
+        Me.PnlLocalidad.Location = New System.Drawing.Point(30, 8)
+        Me.PnlLocalidad.Name = "PnlLocalidad"
+        Me.PnlLocalidad.Size = New System.Drawing.Size(410, 223)
+        Me.PnlLocalidad.TabIndex = 134
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.MediumAquamarine
-        Me.Panel2.Controls.Add(Me.LbltitulofrmInstitucion)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(121, 150)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(470, 38)
-        Me.Panel2.TabIndex = 113
+        Me.Panel2.Size = New System.Drawing.Size(103, 1)
+        Me.Panel2.TabIndex = 199
         '
-        'LbltitulofrmInstitucion
+        'TxtCPostal
         '
-        Me.LbltitulofrmInstitucion.BackColor = System.Drawing.Color.Transparent
-        Me.LbltitulofrmInstitucion.Dock = System.Windows.Forms.DockStyle.Left
-        Me.LbltitulofrmInstitucion.Font = New System.Drawing.Font("Berlin Sans FB", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbltitulofrmInstitucion.ForeColor = System.Drawing.Color.White
-        Me.LbltitulofrmInstitucion.Location = New System.Drawing.Point(0, 0)
-        Me.LbltitulofrmInstitucion.Name = "LbltitulofrmInstitucion"
-        Me.LbltitulofrmInstitucion.Size = New System.Drawing.Size(232, 38)
-        Me.LbltitulofrmInstitucion.TabIndex = 67
-        Me.LbltitulofrmInstitucion.Text = "Agregar localidad"
-        Me.LbltitulofrmInstitucion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.TxtCPostal.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TxtCPostal.BackColor = System.Drawing.Color.FloralWhite
+        Me.TxtCPostal.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCPostal.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCPostal.ForeColor = System.Drawing.Color.White
+        Me.TxtCPostal.Location = New System.Drawing.Point(121, 130)
+        Me.TxtCPostal.Name = "TxtCPostal"
+        Me.TxtCPostal.Size = New System.Drawing.Size(103, 20)
+        Me.TxtCPostal.TabIndex = 198
+        Me.TxtCPostal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(121, 93)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(256, 1)
+        Me.Panel3.TabIndex = 197
+        '
+        'TxtNombreLocalidad
+        '
+        Me.TxtNombreLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.TxtNombreLocalidad.BackColor = System.Drawing.Color.FloralWhite
+        Me.TxtNombreLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtNombreLocalidad.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNombreLocalidad.ForeColor = System.Drawing.Color.White
+        Me.TxtNombreLocalidad.Location = New System.Drawing.Point(121, 73)
+        Me.TxtNombreLocalidad.Name = "TxtNombreLocalidad"
+        Me.TxtNombreLocalidad.Size = New System.Drawing.Size(256, 20)
+        Me.TxtNombreLocalidad.TabIndex = 196
+        Me.TxtNombreLocalidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnGuardarLocalidad
+        '
+        Me.BtnGuardarLocalidad.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.BtnGuardarLocalidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.BtnGuardarLocalidad.FlatAppearance.BorderSize = 0
+        Me.BtnGuardarLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnGuardarLocalidad.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.BtnGuardarLocalidad.ForeColor = System.Drawing.Color.White
+        Me.BtnGuardarLocalidad.Location = New System.Drawing.Point(147, 178)
+        Me.BtnGuardarLocalidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnGuardarLocalidad.Name = "BtnGuardarLocalidad"
+        Me.BtnGuardarLocalidad.Size = New System.Drawing.Size(117, 30)
+        Me.BtnGuardarLocalidad.TabIndex = 195
+        Me.BtnGuardarLocalidad.Text = "Guardar"
+        Me.BtnGuardarLocalidad.UseVisualStyleBackColor = False
+        '
+        'lblCPostal
+        '
+        Me.lblCPostal.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblCPostal.AutoSize = True
+        Me.lblCPostal.BackColor = System.Drawing.Color.Transparent
+        Me.lblCPostal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblCPostal.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.lblCPostal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.lblCPostal.Location = New System.Drawing.Point(29, 131)
+        Me.lblCPostal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblCPostal.Name = "lblCPostal"
+        Me.lblCPostal.Size = New System.Drawing.Size(68, 20)
+        Me.lblCPostal.TabIndex = 192
+        Me.lblCPostal.Text = "C.Postal"
+        Me.lblCPostal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblLocalidad
+        '
+        Me.lblLocalidad.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lblLocalidad.AutoSize = True
+        Me.lblLocalidad.BackColor = System.Drawing.Color.Transparent
+        Me.lblLocalidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.lblLocalidad.Font = New System.Drawing.Font("Century Gothic", 11.25!)
+        Me.lblLocalidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.lblLocalidad.Location = New System.Drawing.Point(29, 74)
+        Me.lblLocalidad.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLocalidad.Name = "lblLocalidad"
+        Me.lblLocalidad.Size = New System.Drawing.Size(82, 20)
+        Me.lblLocalidad.TabIndex = 191
+        Me.lblLocalidad.Text = "Localidad"
+        Me.lblLocalidad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.Transparent
+        Me.Panel12.Controls.Add(Me.BtnDescartar)
+        Me.Panel12.Controls.Add(Me.Label6)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel12.Location = New System.Drawing.Point(0, 0)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(410, 43)
+        Me.Panel12.TabIndex = 133
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(175, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(0, 0)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(410, 43)
+        Me.Label6.TabIndex = 71
+        Me.Label6.Text = "Agregar localidad"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'BtnDescartar
+        '
+        Me.BtnDescartar.BackColor = System.Drawing.Color.Transparent
+        Me.BtnDescartar.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnDescartar.FlatAppearance.BorderSize = 0
+        Me.BtnDescartar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDescartar.Font = New System.Drawing.Font("Berlin Sans FB", 14.25!)
+        Me.BtnDescartar.Image = CType(resources.GetObject("BtnDescartar.Image"), System.Drawing.Image)
+        Me.BtnDescartar.Location = New System.Drawing.Point(0, 0)
+        Me.BtnDescartar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnDescartar.Name = "BtnDescartar"
+        Me.BtnDescartar.Size = New System.Drawing.Size(35, 43)
+        Me.BtnDescartar.TabIndex = 70
+        Me.BtnDescartar.UseVisualStyleBackColor = False
         '
         'FrmLocalidad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(470, 302)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.BtnGuardar)
-        Me.Controls.Add(Me.BtnDescartar)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.LblLocalidad)
-        Me.Controls.Add(Me.TxtCPostal)
-        Me.Controls.Add(Me.TxtNombreLocalidad)
+        Me.BackColor = System.Drawing.Color.DimGray
+        Me.ClientSize = New System.Drawing.Size(473, 239)
+        Me.Controls.Add(Me.PnlLocalidad)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmLocalidad"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "FrmLocalidad"
-        Me.Panel2.ResumeLayout(False)
+        Me.PnlLocalidad.ResumeLayout(False)
+        Me.PnlLocalidad.PerformLayout()
+        Me.Panel12.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents LblLocalidad As Label
-    Friend WithEvents TxtCPostal As TextBox
-    Friend WithEvents TxtNombreLocalidad As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents BtnGuardar As Button
+    Friend WithEvents PnlLocalidad As Panel
+    Friend WithEvents BtnGuardarLocalidad As Button
+    Friend WithEvents lblCPostal As Label
+    Friend WithEvents lblLocalidad As Label
+    Friend WithEvents Panel12 As Panel
     Friend WithEvents BtnDescartar As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents LbltitulofrmInstitucion As Label
+    Friend WithEvents TxtCPostal As TextBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents TxtNombreLocalidad As TextBox
+    Friend WithEvents Label6 As Label
 End Class

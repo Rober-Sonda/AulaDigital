@@ -12,7 +12,7 @@ Public Class Localidad
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
             cmmd.Transaction = CType(Transact, OleDbTransaction)
-            cmmd.CommandText = "INSERT INTO LOCALIDAD (Nombre, CPostal, ESTADO) VALUES  ('" & Localidad.Nombre & "'," & Localidad.CPostal & "," & Localidad.ESTADO & ")"
+            cmmd.CommandText = "INSERT INTO LOCALIDAD (Nombre, CPostal, ESTADO) VALUES  ('" & Localidad.Nombre & "'," & Localidad.CPostal & "," & 1 & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Localidad agregada Correctamente", vbInformation)
         Catch ex As Exception
@@ -78,15 +78,13 @@ Public Class Localidad
         End Try
     End Sub
 
-    Public Function ConsultarLocalidad(ByVal IdMateria As Integer) As Localidad
+    Public Function ConsultarLocalidad(ByVal IdLocalidad As Long) As Localidad
         Dim mLocalidad As New Localidad
-        Dim dbConn As New OleDbConnection
-        dbConn = New OleDbConnection(cadenaConexion)
         Try
-            dbConn.Open()
             Dim dReader As OleDbDataReader
-            Dim sqlstr As String = "SELECT * FROM MATERIA WHERE MATERIA.ESTADO = 1 AND ID_Materia =" & IdMateria & " ORDER BY MATERIA.Nombre"
-
+            Dim sqlstr As String = "SELECT * FROM LOCALIDAD WHERE LOCALIDAD.ESTADO = 1 AND Id_Localidad =" & IdLocalidad & " ORDER BY LOCALIDAD.Nombre"
+            Dim cmd = New OleDbCommand(sqlstr, conexion)
+            dReader = cmd.ExecuteReader
             If dReader.HasRows Then
                 Do While dReader.Read()
                     mLocalidad.Id_Localidad = Convert.ToInt32(dReader(0))
@@ -99,10 +97,9 @@ Public Class Localidad
             End If
 
             dReader.Close()
-            dbConn.Dispose()
         Catch ex As Exception
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
-        Return mMateria
+        Return mLocalidad
     End Function
 End Class

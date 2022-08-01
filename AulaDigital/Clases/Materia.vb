@@ -14,7 +14,7 @@ Public Class Materia
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
             cmmd.Transaction = CType(Transact, OleDbTransaction)
-            cmmd.CommandText = "INSERT INTO MATERIA (Nombre, Hs_Semanales, Tipo_Hora, ESTADO, Id_Carrera) VALUES ('" & Materia.Nombre & "', " & Materia.Hs_Semanales & ", " & Materia.Tipo_Hora & ", " & Materia.ESTADO & ", " & Materia.Id_Carrera & ")"
+            cmmd.CommandText = "INSERT INTO MATERIA (Nombre, ESTADO) VALUES ('" & Materia.Nombre & "', " & 1 & ")"
             cmmd.ExecuteNonQuery()
             MsgBox("Materia agregada Correctamente", vbInformation)
         Catch ex As Exception
@@ -28,7 +28,7 @@ Public Class Materia
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
             cmmd.Transaction = CType(Transact, OleDbTransaction)
-            cmmd.CommandText = "UPDATE SET MATERIA Nombre = '" & Materia.Nombre & "', Hs_Semanales = " & Materia.Hs_Semanales & ", Tipo_Hora = " & Materia.Tipo_Hora & ", ESTADO = " & Materia.ESTADO & ", Id_Carrera = " & Materia.Id_Carrera & " WHERE ID_Materia = " & Materia.ID_Materia & ""
+            cmmd.CommandText = "UPDATE Set MATERIA Nombre = '" & Materia.Nombre & "', Hs_Semanales = " & Materia.Hs_Semanales & ", Tipo_Hora = " & Materia.Tipo_Hora & ", ESTADO = " & Materia.ESTADO & ", Id_Carrera = " & Materia.Id_Carrera & " WHERE ID_Materia = " & Materia.ID_Materia & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
         Catch ex As Exception
@@ -36,13 +36,26 @@ Public Class Materia
         End Try
     End Sub
 
-    Sub EliminarCarrera(ByVal Carrera As Carrera, Optional ByVal Transact As IDbTransaction = Nothing)
+    Sub EliminarMateria(ByVal Carrera As Carrera, Optional ByVal Transact As IDbTransaction = Nothing)
         Try
             Dim cmmd As New OleDbCommand
             'Clave = ComprobarClaveAcceso(ClaveActual)
             cmmd.Connection = conexion
             cmmd.Transaction = CType(Transact, OleDbTransaction)
             cmmd.CommandText = "UPDATE SET CARRERA ESTADO = " & 0 & " WHERE id_Carrera = " & Carrera.id_Carrera & ""
+            cmmd.ExecuteNonQuery()
+            'cmmd.Transaction.Commit()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Sub EliminarMateria(ByVal idMateria As Long)
+        Try
+            Dim cmmd As New OleDbCommand
+            'Clave = ComprobarClaveAcceso(ClaveActual)
+            cmmd.Connection = conexion
+            cmmd.CommandText = "UPDATE MATERIA SET ESTADO = " & 0 & " WHERE idMateria = " & idMateria & ""
             cmmd.ExecuteNonQuery()
             'cmmd.Transaction.Commit()
         Catch ex As Exception
@@ -61,6 +74,40 @@ Public Class Materia
             MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
         End Try
     End Sub
+
+    Public Function _ListaMateria() As List(Of Materia)
+        Dim _ListMateria As New List(Of Materia)
+        Dim mMateria As New Materia
+        Dim dbConn As New OleDbConnection
+        dbConn = New OleDbConnection(cadenaConexion)
+        Try
+            Try
+                dbConn.Open()
+                Dim dReader As OleDbDataReader
+                Dim sqlstr As String = "SELECT * FROM MATERIA WHERE MATERIA.ESTADO = 1 ORDER BY MATERIA.Nombre"
+
+                If dReader.HasRows Then
+                    Do While dReader.Read()
+                        mMateria.ID_Materia = Convert.ToInt64(dReader(0))
+                        mMateria.Nombre = Convert.ToString(dReader(1))
+                        mMateria.ESTADO = Convert.ToByte(dReader(2))
+
+                        _ListMateria.Add(mMateria)
+                    Loop
+                Else
+                    Console.WriteLine("No rows returned.")
+                End If
+
+                dReader.Close()
+                dbConn.Dispose()
+            Catch ex As Exception
+                MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+            End Try
+        Catch ex As Exception
+            MsgBox("ERROR", CType(ex.ToString, MsgBoxStyle))
+        End Try
+        Return _ListMateria
+    End Function
 
     Public Function ConsultarMateria(ByVal IdMateria As Integer) As Materia
         Dim mMateria As New Materia
